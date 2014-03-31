@@ -48,29 +48,52 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check(vk_up))
+            <string>if(obj_controls.p1Controller = false)
 {
-    y = y-moveSpeed
+    if(keyboard_check(vk_up))
+    {
+        y = y-moveSpeed
+    }
+    if(keyboard_check(vk_down))
+    {
+        y = y+moveSpeed
+    }
+    if(keyboard_check(vk_left))
+    {
+        x = x-moveSpeed
+    }
+    if(keyboard_check(vk_right))
+    {
+        x = x+moveSpeed
+    }
+    
+    if(keyboard_check_pressed(vk_space))
+    {
+        moveSpeed += 5;
+    }
 }
-if(keyboard_check(vk_down))
+else
 {
-    y = y+moveSpeed
+    if(gamepad_is_connected(0))
+    {
+        if(gamepad_axis_value(0,gp_axislv) &gt; .2)
+        {
+            y -= moveSpeed
+        }
+        if(gamepad_axis_value(0,gp_axislv) &lt; -.2)
+        {
+            y += moveSpeed
+        }
+        if(gamepad_axis_value(0,gp_axislh) &gt; .2)
+        {
+            x += moveSpeed
+        }
+        if(gamepad_axis_value(0,gp_axislh) &lt; -.2)
+        {
+            x -= moveSpeed
+        }
+    }
 }
-if(keyboard_check(vk_left))
-{
-    x = x-moveSpeed
-}
-if(keyboard_check(vk_right))
-{
-    x = x+moveSpeed
-}
-
-if(keyboard_check_pressed(vk_space))
-{
-    moveSpeed += 5;
-}
-
-if(
 </string>
           </argument>
         </arguments>

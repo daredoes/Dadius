@@ -25,10 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player1Lives = 3;
-player2Lives = 3;
-coop = false;
-global.paused = false;
+            <string>
+//Player 1 Controls
+p1Up = 'w';
+p1Down = 's';
+p1Left = 'a';
+p1Right = 'd';
+p1Controller = false;
+
+//Player 2 Controls
+p2Up = vk_up;
+p2Down = vk_down;
+p2Left = vk_left;
+p2Right = vk_right;
+p2Controller = false;
 </string>
           </argument>
         </arguments>
