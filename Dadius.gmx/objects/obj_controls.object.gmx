@@ -27,12 +27,12 @@
             <kind>1</kind>
             <string>
 //Player 1 Controls
-p1Up = 'w';
-p1Down = 's';
-p1Left = 'a';
-p1Right = 'd';
-p1Upgrade = 'h';
-p1Shoot = 'g';
+p1Up = 'W';
+p1Down = 'S';
+p1Left = 'A';
+p1Right = 'D';
+p1Upgrade = 'H';
+p1Shoot = 'G';
 p1Controller = false;
 
 //Player 2 Controls
@@ -40,8 +40,8 @@ p2Up = vk_up;
 p2Down = vk_down;
 p2Left = vk_left;
 p2Right = vk_right;
-p2Upgrade = '.';
-p2Shoot = ',';
+p2Upgrade = '&gt;';
+p2Shoot = '&lt;';
 p2Controller = false;
 </string>
           </argument>
