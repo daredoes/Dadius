@@ -32,7 +32,7 @@ p1Down = 'S';
 p1Left = 'A';
 p1Right = 'D';
 p1Upgrade = 'H';
-p1Shoot = 'G';
+p1Shoot = 'F';
 p1Controller = false;
 
 //Player 2 Controls

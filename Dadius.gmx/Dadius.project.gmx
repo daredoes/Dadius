@@ -6,12 +6,25 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprite>sprites\spr_laser</sprite>
     <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_shrapnel</sprite>
+    <sprite>sprites\spr_explosion</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_draw_effect.gml</script>
+    <script>scripts\scr_step_effect.gml</script>
+    <script>scripts\scr_create_effect.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_game</object>
+    <object>objects\obj_enemy</object>
+    <object>objects\obj_effect</object>
+    <object>objects\obj_shrapnel</object>
+    <object>objects\obj_explosion</object>
     <object>objects\obj_player1</object>
     <object>objects\obj_variables</object>
     <object>objects\obj_controls</object>
