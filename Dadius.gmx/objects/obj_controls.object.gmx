@@ -31,6 +31,8 @@ p1Up = 'w';
 p1Down = 's';
 p1Left = 'a';
 p1Right = 'd';
+p1Upgrade = 'h';
+p1Shoot = 'g';
 p1Controller = false;
 
 //Player 2 Controls
@@ -38,6 +40,8 @@ p2Up = vk_up;
 p2Down = vk_down;
 p2Left = vk_left;
 p2Right = vk_right;
+p2Upgrade = '.';
+p2Shoot = ',';
 p2Controller = false;
 </string>
           </argument>

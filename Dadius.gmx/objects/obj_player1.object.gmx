@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>moveSpeed = 10;
+upgrade = 0;
+maxUpgrades = 4
 </string>
           </argument>
         </arguments>
@@ -50,19 +52,19 @@
             <kind>1</kind>
             <string>if(obj_controls.p1Controller = false)
 {
-    if(keyboard_check(vk_up))
+    if(keyboard_check(obj_controls.p1Up))
     {
         y = y-moveSpeed
     }
-    if(keyboard_check(vk_down))
+    if(keyboard_check((obj_controls.p1Down))
     {
         y = y+moveSpeed
     }
-    if(keyboard_check(vk_left))
+    if(keyboard_check((obj_controls.p1Left))
     {
         x = x-moveSpeed
     }
-    if(keyboard_check(vk_right))
+    if(keyboard_check((obj_controls.p1Right))
     {
         x = x+moveSpeed
     }
@@ -93,6 +95,11 @@ else
             x -= moveSpeed
         }
     }
+}
+
+if(upgrades &gt; maxUpgrades)
+{
+    upgrades = 0;
 }
 </string>
           </argument>
