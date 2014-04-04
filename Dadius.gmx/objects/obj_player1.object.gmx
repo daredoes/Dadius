@@ -80,19 +80,19 @@ else
     {
         if(gamepad_axis_value(0,gp_axislv) &gt; .2)
         {
-            y -= moveSpeed
+            y += moveSpeed * gamepad_axis_value(0,gp_axislv)
         }
         if(gamepad_axis_value(0,gp_axislv) &lt; -.2)
         {
-            y += moveSpeed
+            y += moveSpeed * gamepad_axis_value(0,gp_axislv)
         }
         if(gamepad_axis_value(0,gp_axislh) &gt; .2)
         {
-            x += moveSpeed
+            x += moveSpeed * gamepad_axis_value(0,gp_axislh)
         }
         if(gamepad_axis_value(0,gp_axislh) &lt; -.2)
         {
-            x -= moveSpeed
+            x += moveSpeed * gamepad_axis_value(0,gp_axislh)
         }
     }
 }
