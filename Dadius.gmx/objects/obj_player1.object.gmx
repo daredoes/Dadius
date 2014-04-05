@@ -36,7 +36,7 @@ oneShot = 1
 
 fire = 0
 
-
+image_speed = 0
 </string>
           </argument>
         </arguments>
@@ -82,12 +82,23 @@ fire = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_follow()
+            <string>//MAKE THE VIEW FOLLOW THE PLAYER
+
+view_follow()
+
+//MAKE THE VIEW CONSTANTLY MOVING TO THE LEFT
+
 view_xview[0] += 2
-x+=2
+x+=2 //MAKE THE PLAYER FOLLOW THE VIEW BY DEFAULT IF NO BUTTON IS PRESSED
+
+//RESET FIRING TO 0 BEFORE CHECKING CONTROLS TO SEE IF ITS PRESSED AGAIN
+fire = 0
+
+//KEYBOARD CONTROLS
 
 if(obj_controls.p1Controller = false)
 {
+    //MOVEMENT
     if(keyboard_check(ord(obj_controls.p1Up)))
     {
         y = y-moveSpeed
@@ -104,57 +115,55 @@ if(obj_controls.p1Controller = false)
     {
         x = x+moveSpeed
     }
-    fire = 0
+    
+    //FIRE WEAPONS
     if(keyboard_check(ord((obj_controls.p1Shoot))))
     {
-        if cfire
-            {
-            cfire = 0
-            alarm[0] = 5
-            if oneShot
-                nb = instance_create(x,y,obj_basic_shot)
-            else
-                nb = instance_create(x,y+16 * side,obj_basic_shot)
-            nb.hspeed = 32
-            side *= -1
-            fire = 1
-            }
+        fire = 1
     }
     
-    if(keyboard_check_pressed(vk_space))
-    {
-        moveSpeed += 5;
-    }
-}
-else
-{
-    if(gamepad_is_connected(0))
-    {
-        if abs(gamepad_axis_value(0,gp_axislv) &gt; .2)
-        y += moveSpeed * gamepad_axis_value(0,gp_axislv)
-
-        if abs(gamepad_axis_value(0,gp_axislh) &gt; .2)
-        x += moveSpeed * gamepad_axis_value(0,gp_axislh)
-    }
-    
-    
-    
-}
-if joystick_exists(1)
+    //DEVELOPER CONTROLS
+    if global.devControlsActive
         {
-        if abs(joystick_xpos(1)) &gt; .1
-        x += joystick_xpos(1) * moveSpeed
-        if abs(joystick_ypos(1)) &gt; .1
-        y += joystick_ypos(1) * moveSpeed
-        if joystick_check_button(1,1)
+        if(keyboard_check_pressed(vk_space))
             {
-            obj_controls.p1Shoot = 1
+            moveSpeed += 5;
             }
         }
+}
+//GAMEPAD CONTROLS
+
+if(gamepad_is_connected(0))
+{
+    if abs(gamepad_axis_value(0,gp_axislv) &gt; .2)
+    y += moveSpeed * gamepad_axis_value(0,gp_axislv)
+
+    if abs(gamepad_axis_value(0,gp_axislh) &gt; .2)
+    x += moveSpeed * gamepad_axis_value(0,gp_axislh)
+}
+
+//JOYSTICK CONTROLS
+
+if joystick_exists(1)
+    {
+    if abs(joystick_xpos(1)) &gt; .1
+    x += joystick_xpos(1) * moveSpeed
+    if abs(joystick_ypos(1)) &gt; .1
+    y += joystick_ypos(1) * moveSpeed
+    if joystick_check_button(1,1)
+        {
+        fire = 1
+        }
+    }
+        
+//UPGRADE CYCLER
+
 if(upgrades &gt; maxUpgrades)
 {
     upgrades = 0;
 }
+
+//MOVEMENT BOUNDARIES
 
 if y &lt; view_yview[0] + sprite_height/2
 y = view_yview[0] + sprite_height/2
@@ -167,6 +176,22 @@ x = view_xview[0] + sprite_width/2
 
 if x &gt; view_xview[0] + view_wview[0] - sprite_width/2
 x = view_xview[0] + view_wview[0] - sprite_width/2
+
+//FIRE WEAPONS IF FIRE BUTTON IS PRESSED
+
+if fire
+if cfire
+    {
+    cfire = 0
+    alarm[0] = 5
+    if !oneShot
+        nb = instance_create(x,y,obj_basic_shot)
+    else
+        nb = instance_create(x,y+24 * side,obj_basic_shot)
+    nb.hspeed = 32
+    side *= -1
+    fire = 1
+    }
 </string>
           </argument>
         </arguments>
@@ -192,7 +217,10 @@ x = view_xview[0] + view_wview[0] - sprite_width/2
             <string>draw_sprite(sprite_index,0,x,y)
 
 if fire
-draw_sprite_ext(spr_blast,0,x,y,random(.5)+.5,random(.5)+.5,0,c_white,1)
+draw_sprite_ext(spr_blast,0,x,y+24 * -side,random(.5)+.5,random(.5)+.5,0,c_white,.5)
+
+
+draw_sprite_ext(sprite_index,1,x,y,1,1,0,c_white, (x - xprevious) / 4)
 
 </string>
           </argument>

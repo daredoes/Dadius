@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>hspeed= -1
+
+image_speed = 0
 </string>
           </argument>
         </arguments>
@@ -55,6 +57,8 @@ repeat(10)
 scr_create_effect(x,y,spr_shrapnel,.01,20+random(10),random(360),random(2))
 
 with other instance_destroy()
+
+audio_play_sound(snd_explosion1,1,0)
 </string>
           </argument>
         </arguments>

@@ -4,7 +4,12 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_explosion1</sound>
+    <sound>sound\snd_pew3</sound>
+    <sound>sound\snd_pew2</sound>
+    <sound>sound\snd_pew1</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_laser</sprite>
     <sprite>sprites\spr_player</sprite>
@@ -18,24 +23,28 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_draw_effect.gml</script>
-    <script>scripts\scr_step_effect.gml</script>
-    <script>scripts\scr_create_effect.gml</script>
+    <scripts name="effects">
+      <script>scripts\scr_draw_effect.gml</script>
+      <script>scripts\scr_step_effect.gml</script>
+      <script>scripts\scr_create_effect.gml</script>
+    </scripts>
     <script>scripts\adjust.gml</script>
     <script>scripts\view_follow.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_game</object>
+    <object>objects\obj_player1</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_effect</object>
     <object>objects\obj_shrapnel</object>
-    <object>objects\obj_explosion</object>
-    <object>objects\obj_player1</object>
+    <objects name="WEAPONS / EQUIP">
+      <object>objects\obj_explosion</object>
+      <object>objects\obj_special_shot</object>
+      <object>objects\obj_basic_shot</object>
+      <object>objects\obj_shield</object>
+    </objects>
     <object>objects\obj_variables</object>
     <object>objects\obj_controls</object>
-    <object>objects\obj_basic_shot</object>
-    <object>objects\obj_special_shot</object>
-    <object>objects\obj_shield</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
