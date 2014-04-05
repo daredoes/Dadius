@@ -33,6 +33,10 @@ maxUpgrades = 4
 side = 1
 
 oneShot = 1
+
+fire = 0
+
+
 </string>
           </argument>
         </arguments>
@@ -78,7 +82,11 @@ oneShot = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_controls.p1Controller = false)
+            <string>view_follow()
+view_xview[0] += 2
+x+=2
+
+if(obj_controls.p1Controller = false)
 {
     if(keyboard_check(ord(obj_controls.p1Up)))
     {
@@ -96,6 +104,7 @@ oneShot = 1
     {
         x = x+moveSpeed
     }
+    fire = 0
     if(keyboard_check(ord((obj_controls.p1Shoot))))
     {
         if cfire
@@ -108,6 +117,7 @@ oneShot = 1
                 nb = instance_create(x,y+16 * side,obj_basic_shot)
             nb.hspeed = 32
             side *= -1
+            fire = 1
             }
     }
     
@@ -120,29 +130,70 @@ else
 {
     if(gamepad_is_connected(0))
     {
-        if(gamepad_axis_value(0,gp_axislv) &gt; .2)
-        {
-            y += moveSpeed * gamepad_axis_value(0,gp_axislv)
-        }
-        if(gamepad_axis_value(0,gp_axislv) &lt; -.2)
-        {
-            y += moveSpeed * gamepad_axis_value(0,gp_axislv)
-        }
-        if(gamepad_axis_value(0,gp_axislh) &gt; .2)
-        {
-            x += moveSpeed * gamepad_axis_value(0,gp_axislh)
-        }
-        if(gamepad_axis_value(0,gp_axislh) &lt; -.2)
-        {
-            x += moveSpeed * gamepad_axis_value(0,gp_axislh)
-        }
-    }
-}
+        if abs(gamepad_axis_value(0,gp_axislv) &gt; .2)
+        y += moveSpeed * gamepad_axis_value(0,gp_axislv)
 
+        if abs(gamepad_axis_value(0,gp_axislh) &gt; .2)
+        x += moveSpeed * gamepad_axis_value(0,gp_axislh)
+    }
+    
+    
+    
+}
+if joystick_exists(1)
+        {
+        if abs(joystick_xpos(1)) &gt; .1
+        x += joystick_xpos(1) * moveSpeed
+        if abs(joystick_ypos(1)) &gt; .1
+        y += joystick_ypos(1) * moveSpeed
+        if joystick_check_button(1,1)
+            {
+            obj_controls.p1Shoot = 1
+            }
+        }
 if(upgrades &gt; maxUpgrades)
 {
     upgrades = 0;
 }
+
+if y &lt; view_yview[0] + sprite_height/2
+y = view_yview[0] + sprite_height/2
+
+if y &gt; view_yview[0] + view_hview[0] - sprite_height/2
+y = view_yview[0] + view_hview[0] - sprite_height/2
+
+if x &lt; view_xview[0] + sprite_width/2
+x = view_xview[0] + sprite_width/2
+
+if x &gt; view_xview[0] + view_wview[0] - sprite_width/2
+x = view_xview[0] + view_wview[0] - sprite_width/2
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite(sprite_index,0,x,y)
+
+if fire
+draw_sprite_ext(spr_blast,0,x,y,random(.5)+.5,random(.5)+.5,0,c_white,1)
+
 </string>
           </argument>
         </arguments>

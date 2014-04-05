@@ -7,3 +7,4 @@ ne.speed = argument4
 ne.direction = argument5
 ne.friction = argument6
 ne.image_angle = ne.direction
+
