@@ -36,6 +36,7 @@
     <object>objects\obj_player1</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_effect</object>
+    <object>objects\obj_spawner</object>
     <object>objects\obj_shrapnel</object>
     <objects name="WEAPONS / EQUIP">
       <object>objects\obj_explosion</object>
