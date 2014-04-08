@@ -17,11 +17,29 @@
     <sprite>sprites\spr_shrapnel</sprite>
     <sprite>sprites\spr_blast</sprite>
     <sprite>sprites\spr_explosion</sprite>
+    <sprites name="INTRO">
+      <sprite>sprites\spr_E</sprite>
+      <sprite>sprites\spr_flash</sprite>
+      <sprite>sprites\spr_ink</sprite>
+      <sprite>sprites\spr_ray</sprite>
+      <sprite>sprites\spr_W</sprite>
+      <sprite>sprites\spr_P</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\back_space</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path_D</path>
+    <path>paths\path_E</path>
+    <path>paths\path_I</path>
+    <path>paths\path_O</path>
+    <path>paths\path_P</path>
+    <path>paths\path_S</path>
+    <path>paths\path_T</path>
+    <path>paths\path_U</path>
+    <path>paths\path_W</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="effects">
       <script>scripts\scr_draw_effect.gml</script>
@@ -46,8 +64,24 @@
     </objects>
     <object>objects\obj_variables</object>
     <object>objects\obj_controls</object>
+    <objects name="INTRO">
+      <object>objects\obj_control</object>
+      <object>objects\obj_E</object>
+      <object>objects\obj_I</object>
+      <object>objects\obj_ink</object>
+      <object>objects\obj_D</object>
+      <object>objects\obj_intro_overlay</object>
+      <object>objects\obj_letter</object>
+      <object>objects\obj_P</object>
+      <object>objects\obj_O</object>
+      <object>objects\obj_T</object>
+      <object>objects\obj_S</object>
+      <object>objects\obj_U</object>
+      <object>objects\obj_W</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_intro</room>
     <room>rooms\rm_game</room>
   </rooms>
   <help>
