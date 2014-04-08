@@ -82,7 +82,10 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//MAKE THE VIEW FOLLOW THE PLAYER
+            <string>if keyboard_check_pressed(ord("R"))
+game_restart()
+
+//MAKE THE VIEW FOLLOW THE PLAYER
 
 view_follow()
 
