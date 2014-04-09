@@ -80,7 +80,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_text(view_wport[0]/2+view_xview[0],view_hport[0]/16+view_yview[0],"Score: " + string(score));
 
-//Draw Upgrade Bar
+//Draw Upgrade Bar - Might need to go in Player Object
 for(i = 0; i &lt; 5; i++)
 {
     draw_set_color(c_white);
