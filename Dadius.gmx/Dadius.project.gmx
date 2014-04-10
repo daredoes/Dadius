@@ -32,11 +32,8 @@
       <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_P</sprite>
     </sprites>
-<<<<<<< HEAD
     <sprite>sprites\spr_c4</sprite>
-=======
     <sprite>sprites\spr_space_particle</sprite>
->>>>>>> f9567f39a58ac66c9709a351ea180cce6b279e69
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>
