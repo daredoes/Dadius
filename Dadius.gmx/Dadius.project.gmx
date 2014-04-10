@@ -34,6 +34,7 @@
     </sprites>
     <sprite>sprites\spr_c4</sprite>
     <sprite>sprites\spr_space_particle</sprite>
+    <sprite>sprites\spr_ptero</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>
@@ -98,6 +99,7 @@
       <object>objects\obj_W</object>
     </objects>
     <object>objects\obj_suicide</object>
+    <object>objects\obj_pterodactyl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_pewpew_intro</room>
