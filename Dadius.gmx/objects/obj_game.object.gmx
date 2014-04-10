@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(view_wview[0]/2,view_hview[0]/2,obj_player1);
+            <string>global.players = 0
+instance_create(view_wview[0]/2,view_hview[0]/2 - 128,obj_player1);
+//instance_create(view_wview[0]/2,view_hview[0]/2 + 128,obj_player1);
 text = "check";
 </string>
           </argument>

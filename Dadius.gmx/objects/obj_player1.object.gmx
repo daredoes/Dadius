@@ -38,6 +38,8 @@ fire = 0
 
 image_speed = 0
 
+player_id = global.players
+global.players++
 </string>
           </argument>
         </arguments>
@@ -107,23 +109,23 @@ if(obj_controls.p1Controller = false)
     //MOVEMENT
     if(keyboard_check(ord(obj_controls.p1Up)))
     {
-        //y = y-moveSpeed
-        motion_add(90,1)
+        y = y-moveSpeed
+        //motion_add(90,1)
     }
     if(keyboard_check(ord((obj_controls.p1Down))))
     {
-        //y = y+moveSpeed
-        motion_add(270,1)
+        y = y+moveSpeed
+        //motion_add(270,1)
     }
     if(keyboard_check(ord((obj_controls.p1Left))))
     {
-        //x = x-moveSpeed
-        motion_add(180,1)
+        x = x-moveSpeed
+        //motion_add(180,1)
     }
     if(keyboard_check(ord((obj_controls.p1Right))))
     {
-        //x = x+moveSpeed
-        motion_add(0,1)
+        x = x+moveSpeed
+        //motion_add(0,1)
     }
     
     //FIRE WEAPONS
@@ -143,24 +145,24 @@ if(obj_controls.p1Controller = false)
 }
 //GAMEPAD CONTROLS
 
-if(gamepad_is_connected(0))
+if(gamepad_is_connected(player_id))
 {
-    if abs(gamepad_axis_value(0,gp_axislv) &gt; .2)
+    if abs(gamepad_axis_value(player_id,gp_axislv) &gt; .2)
     y += moveSpeed * gamepad_axis_value(0,gp_axislv)
 
-    if abs(gamepad_axis_value(0,gp_axislh) &gt; .2)
+    if abs(gamepad_axis_value(player_id,gp_axislh) &gt; .2)
     x += moveSpeed * gamepad_axis_value(0,gp_axislh)
 }
 
 //JOYSTICK CONTROLS
 
-if joystick_exists(1)
+if joystick_exists(1+player_id)
     {
-    if abs(joystick_xpos(1)) &gt; .1
-    x += joystick_xpos(1) * moveSpeed
-    if abs(joystick_ypos(1)) &gt; .1
-    y += joystick_ypos(1) * moveSpeed
-    if joystick_check_button(1,1)
+    if abs(joystick_xpos(1+player_id)) &gt; .1
+    x += joystick_xpos(1+player_id) * moveSpeed
+    if abs(joystick_ypos(1+player_id)) &gt; .1
+    y += joystick_ypos(1+player_id) * moveSpeed
+    if joystick_check_button(1+player_id,1)
         {
         fire = 1
         }
