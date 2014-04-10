@@ -188,7 +188,7 @@ if cfire
     {
     cfire = 0
     alarm[0] = 5
-    if !oneShot
+    if oneShot
         nb = instance_create(x,y,obj_basic_shot)
     else
         nb = instance_create(x,y+24 * side,obj_basic_shot)
@@ -218,11 +218,16 @@ if cfire
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_index,0,x,y)
+            <string>draw_set_alpha(1)
+draw_sprite(sprite_index,0,x,y)
 
 if fire
+{
+if oneShot
+draw_sprite_ext(spr_blast,0,x+24,y,random(.5)+.5,random(.5)+.5,0,c_white,.5)
+else
 draw_sprite_ext(spr_blast,0,x,y+24 * -side,random(.5)+.5,random(.5)+.5,0,c_white,.5)
-
+}
 
 draw_sprite_ext(sprite_index,1,x,y,1,1,0,c_white, (x - xprevious) / 4)
 

@@ -9,6 +9,7 @@
     <sound>sound\snd_pew3</sound>
     <sound>sound\snd_pew2</sound>
     <sound>sound\snd_pew1</sound>
+    <sound>sound\snd_music</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_laser</sprite>
@@ -23,11 +24,15 @@
       <sprite>sprites\spr_ink</sprite>
       <sprite>sprites\spr_ray</sprite>
       <sprite>sprites\spr_W</sprite>
+      <sprite>sprites\spr_star</sprite>
+      <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_P</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\background2</background>
     <background>background\back_space</background>
+    <background>background\back_dark_grad</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_D</path>
@@ -49,6 +54,9 @@
     <script>scripts\adjust.gml</script>
     <script>scripts\view_follow.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_game</object>
     <object>objects\obj_player1</object>
@@ -62,9 +70,12 @@
       <object>objects\obj_basic_shot</object>
       <object>objects\obj_shield</object>
     </objects>
+    <object>objects\obj_dadius_intro</object>
+    <object>objects\obj_main_menu</object>
     <object>objects\obj_variables</object>
     <object>objects\obj_controls</object>
     <objects name="INTRO">
+      <object>objects\obj_star</object>
       <object>objects\obj_control</object>
       <object>objects\obj_E</object>
       <object>objects\obj_I</object>
@@ -81,8 +92,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_pewpew_intro</room>
+    <room>rooms\rm_game_intro</room>
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_game</room>
-    <room>rooms\rm_intro</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

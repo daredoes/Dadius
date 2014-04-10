@@ -29,7 +29,43 @@
 
 global.time = 100
 
-//sound_play(snd_pew)
+audio_play_music(snd_music,1)
+
+proceed = 1
+
+//alarm[0] = 50
+
+
+/*
+repeat(100)
+{
+ns = instance_create(random(room_width),random(room_height),obj_star)
+ns.direction = dir
+ns.speed = 2
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>proceed = 1
 </string>
           </argument>
         </arguments>
@@ -52,7 +88,23 @@ global.time = 100
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.a+=.01
+            <string>if keyboard_check_pressed(vk_escape)
+game_end()
+
+//if global.a &lt; 2.5 //|| proceed
+if proceed
+global.a+=.01
+
+if keyboard_check_pressed(vk_space)
+proceed = true
+
+dir = random(360)
+x1 = room_width/2 //+ lengthdir_x(room_width/2 + 16,dir)
+y1 = room_height/2 //+ lengthdir_y(room_width/2 + 16,dir)
+ns = instance_create(x1,y1,obj_star)
+
+ns.direction = dir //point_direction(ns.x,ns.y,room_width/2,room_height/2)
+ns.speed = random(1)+2
 </string>
           </argument>
         </arguments>
