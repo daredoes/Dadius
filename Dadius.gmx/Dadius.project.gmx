@@ -9,13 +9,18 @@
     <sound>sound\snd_pew3</sound>
     <sound>sound\snd_pew2</sound>
     <sound>sound\snd_pew1</sound>
+    <sound>sound\snd_music</sound>
+    <sound>sound\snd_select</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_laser</sprite>
     <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_enemy2</sprite>
+    <sprite>sprites\sprite17</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_shrapnel</sprite>
     <sprite>sprites\spr_blast</sprite>
+    <sprite>sprites\spr_loadbar</sprite>
     <sprite>sprites\spr_explosion</sprite>
     <sprites name="INTRO">
       <sprite>sprites\spr_E</sprite>
@@ -23,12 +28,20 @@
       <sprite>sprites\spr_ink</sprite>
       <sprite>sprites\spr_ray</sprite>
       <sprite>sprites\spr_W</sprite>
+      <sprite>sprites\spr_star</sprite>
+      <sprite>sprites\spr_button</sprite>
       <sprite>sprites\spr_P</sprite>
     </sprites>
+<<<<<<< HEAD
     <sprite>sprites\spr_c4</sprite>
+=======
+    <sprite>sprites\spr_space_particle</sprite>
+>>>>>>> f9567f39a58ac66c9709a351ea180cce6b279e69
   </sprites>
   <backgrounds name="background">
+    <background>background\back_dadius</background>
     <background>background\back_space</background>
+    <background>background\back_dark_grad</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_D</path>
@@ -50,6 +63,9 @@
     <script>scripts\adjust.gml</script>
     <script>scripts\view_follow.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_game</object>
     <object>objects\obj_player1</object>
@@ -63,9 +79,13 @@
       <object>objects\obj_basic_shot</object>
       <object>objects\obj_shield</object>
     </objects>
+    <object>objects\obj_dadius_intro</object>
+    <object>objects\obj_space_particle</object>
+    <object>objects\obj_main_menu</object>
     <object>objects\obj_variables</object>
     <object>objects\obj_controls</object>
     <objects name="INTRO">
+      <object>objects\obj_star</object>
       <object>objects\obj_control</object>
       <object>objects\obj_E</object>
       <object>objects\obj_I</object>
@@ -83,7 +103,9 @@
     <object>objects\obj_suicide</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_intro</room>
+    <room>rooms\rm_pewpew_intro</room>
+    <room>rooms\rm_game_intro</room>
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_game</room>
   </rooms>
   <help>

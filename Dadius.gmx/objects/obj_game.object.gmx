@@ -53,6 +53,12 @@ text = "check";
 {
     game_end();
 }
+
+if random(10)&gt;9
+{
+np=instance_create(room_width + 10,random(view_hview[0]),obj_space_particle)
+np.hspeed = -random(8)-8
+}
 </string>
           </argument>
         </arguments>
