@@ -25,6 +25,7 @@
       <sprite>sprites\spr_W</sprite>
       <sprite>sprites\spr_P</sprite>
     </sprites>
+    <sprite>sprites\spr_c4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_space</background>
@@ -79,6 +80,7 @@
       <object>objects\obj_U</object>
       <object>objects\obj_W</object>
     </objects>
+    <object>objects\obj_suicide</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_intro</room>
