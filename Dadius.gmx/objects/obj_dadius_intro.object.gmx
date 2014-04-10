@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 150
+
+a = 1
+ad = -.1
 </string>
           </argument>
         </arguments>
@@ -48,7 +51,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto_next()
+            <string>ad = .1
+//room_goto_next()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_alpha(a)
+draw_set_color(c_black)
+draw_rectangle(0,0,room_width,room_height,0)
+
+
+a += ad
+
+if a &lt; 0 a = 0
+
+if a &gt; 1 room_goto_next()
+
 </string>
           </argument>
         </arguments>

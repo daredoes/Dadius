@@ -8,3 +8,4 @@ ne.direction = argument5
 ne.friction = argument6
 ne.image_angle = ne.direction
 
+ne.hspeed += hspeed
