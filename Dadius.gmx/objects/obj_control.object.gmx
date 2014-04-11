@@ -29,12 +29,11 @@
 
 global.time = 100
 
-audio_play_music(snd_music,1)
+//audio_play_music(snd_music,1)
 
 proceed = 1
 
 //alarm[0] = 50
-
 
 /*
 repeat(100)

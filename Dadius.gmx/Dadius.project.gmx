@@ -36,6 +36,7 @@
     <sprite>sprites\spr_space_particle</sprite>
     <sprite>sprites\spr_ptero</sprite>
     <sprite>sprites\spr_fireball</sprite>
+    <sprite>sprites\spr_asteroids</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>
@@ -101,6 +102,7 @@
       <object>objects\obj_W</object>
     </objects>
     <object>objects\obj_suicide</object>
+    <object>objects\obj_asteroid</object>
     <object>objects\obj_fireball</object>
   </objects>
   <rooms name="rooms">

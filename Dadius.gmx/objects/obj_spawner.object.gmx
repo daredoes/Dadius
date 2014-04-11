@@ -52,7 +52,15 @@ alarm[0] = 10
             <kind>1</kind>
             <string>
 wave++
+
+
 instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , obj_pterodactyl)
+
+if random(10) &gt; 9
+{
+na = instance_create(view_xview[0] + view_wview[0] + 256 , random(room_height - 128) + 64 , obj_asteroid)
+na.hspeed = -1
+}
 
 set = 50 - wave
 if set &lt; 10 set = 10
