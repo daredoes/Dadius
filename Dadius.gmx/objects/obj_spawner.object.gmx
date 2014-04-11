@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>wave = 0
-
+spawn = obj_pterodactyl;
 alarm[0] = 10
 </string>
           </argument>
@@ -53,8 +53,15 @@ alarm[0] = 10
             <string>
 wave++
 
-
-instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , obj_pterodactyl)
+if(random(1))
+{
+    spawn = obj_pterodactyl;
+}
+else
+{
+    spawn = obj_suicide;
+}
+instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , spawn)
 
 if random(10) &gt; 9
 {

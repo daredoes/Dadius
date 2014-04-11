@@ -87,7 +87,7 @@ noPoints = false;
     instance_destroy();
 }
 x--;
-if(x-obj_player1.x &lt; 850)
+if(x-obj_player1.x &lt; 950)
 {
     
     if(up)
@@ -118,7 +118,7 @@ if(x-obj_player1.x &lt; 850)
             height = round(random(600));
         }
     }
-    if(y &lt;= obj_player1.y+20 &amp;&amp; y &gt;= obj_player1.y-20)
+    if(y &lt;= obj_player1.y+64 &amp;&amp; y &gt;= obj_player1.y-64)
     {
         if(image_index = 2)
         {

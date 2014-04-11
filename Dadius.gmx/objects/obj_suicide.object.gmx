@@ -75,7 +75,7 @@ score += value;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(x-obj_player1.x &lt;500)
+            <string>if(x-obj_player1.x &lt;800)
 {
 if(y &lt; obj_player1.y &amp;&amp; !attacking)
 {
