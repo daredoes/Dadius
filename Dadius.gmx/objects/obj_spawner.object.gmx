@@ -52,7 +52,7 @@ alarm[0] = 10
             <kind>1</kind>
             <string>
 wave++
-instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , obj_suicide)
+instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , obj_pterodactyl)
 
 set = 50 - wave
 if set &lt; 10 set = 10
