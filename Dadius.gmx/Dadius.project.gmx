@@ -100,6 +100,7 @@
       <object>objects\obj_W</object>
     </objects>
     <object>objects\obj_suicide</object>
+    <object>objects\obj_fireball</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_pewpew_intro</room>
