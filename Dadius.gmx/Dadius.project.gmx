@@ -35,6 +35,7 @@
     <sprite>sprites\spr_c4</sprite>
     <sprite>sprites\spr_space_particle</sprite>
     <sprite>sprites\spr_ptero</sprite>
+    <sprite>sprites\spr_fireball</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>
