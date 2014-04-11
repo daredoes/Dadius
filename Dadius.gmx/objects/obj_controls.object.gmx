@@ -46,6 +46,24 @@ p2Controller = false;
 
 //Dev Controls
 global.devControlsActive = true
+
+/*
+global.controls_down_pressed[0] = 0
+global.controls_down_pressed[1] = 0
+global.joystickExists[0] = joystick_exists(1)
+global.joystickExists[1] = joystick_exists(2)
+
+if global.joysticks
+for(i=0 ; i &lt; 2 ; i++)
+{
+if joystick_ypos(i+1) &gt; .2
+    {
+    if global.controls_down_pressed[0] = 0
+    global.controls_down_pressed[i] = 1
+    }
+}
+
+
 </string>
           </argument>
         </arguments>
