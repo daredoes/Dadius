@@ -234,14 +234,21 @@ else
 oneShot = 1
 
 if fire
+if obj_game.power_up_selected != 1
 if cfire
     {
     cfire = 0
-    alarm[0] = 5
+    
     if oneShot
+        {
+        alarm[0] = 5
         nb = instance_create(x,y,obj_basic_shot)
+        }
     else
+        {
+        alarm[0] = 2
         nb = instance_create(x,y+24 * side,obj_basic_shot)
+        }
     nb.hspeed = 32
     side *= -1
     fire = 1
@@ -313,13 +320,13 @@ if fire
     else
         draw_sprite_ext(spr_blast,0,x,y+24 * -side,random(1)+.5,random(.5)+.5,0,c_white,1)
     if obj_game.power_up_selected = 1
-        draw_sprite_stretched(spr_laser_beam,0,x,y,room_width,40)
+        draw_sprite_stretched(spr_laser_beam,0,x+20,y-20,room_width,40)
     }
 
 draw_sprite_ext(sprite_index,1,x,y,1,1,0,c_white, (x - xprevious) / 8)
 
 if obj_game.power_up_selected = 3
-draw_sprite_ext(spr_shield,0,x,y,1,1,0,c_white, 1)
+    draw_sprite_ext(spr_shield,0,x,y,1,1,0,c_white, 1)
 
 
 
