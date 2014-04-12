@@ -62,6 +62,8 @@ global.joystick_right_pressed[1] = 0
 global.joystickExists[0] = joystick_exists(1)
 global.joystickExists[1] = joystick_exists(2)
 
+global.joysticks = 0
+
 if global.joystickExists[0]
     {
     global.joysticks = 1
