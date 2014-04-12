@@ -63,6 +63,8 @@ global.joystickExists[0] = joystick_exists(1)
 global.joystickExists[1] = joystick_exists(2)
 
 global.joysticks = 0
+global.joystickButtons[0] = 0
+global.joystickButtons[1] = 0
 
 if global.joystickExists[0]
     {
@@ -76,7 +78,7 @@ if global.joystickExists[1]
     }
 
 //JOYSTICK BUTTONS PRESSED
-for(j=0 ; j &lt; global.joysticks ; j++)
+for(j=0 ; j &lt; 2 ; j++)
     {
     for(i=0 ; i &lt; global.joystickButtons[j] ; i++)
         {
