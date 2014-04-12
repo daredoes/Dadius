@@ -25,10 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.players = 0
+            <string>global.players_in = 0
+
 instance_create(view_wview[0]/2,view_hview[0]/2 - 128,obj_player1);
-//instance_create(view_wview[0]/2,view_hview[0]/2 + 128,obj_player1);
+if global.players = 2
+instance_create(view_wview[0]/2,view_hview[0]/2 + 128,obj_player1);
 text = "check";
+
+power_ups = 0
+power_up[0] = ""
+
+scr_add_power_up("Speed Boost" )
+scr_add_power_up("Beam" )
+scr_add_power_up("Double" )
+scr_add_power_up("Shield" )
+scr_add_power_up("Special" )
+
+power_up_selected = 0
+
+
 </string>
           </argument>
         </arguments>
@@ -61,6 +76,9 @@ if random(10)&gt;9
 np=instance_create(room_width + 10,random(view_hview[0]),obj_space_particle)
 np.hspeed = -random(8)-8
 }
+
+if instance_number(obj_player1) = 0
+room = rm_lose
 </string>
           </argument>
         </arguments>
@@ -83,7 +101,23 @@ np.hspeed = -random(8)-8
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_white);
+            <string>
+scr_shorter_view_names()
+
+with obj_player1
+    {
+    scr_shorter_view_names()
+    for(i=0 ; i &lt; maxlives ; i++)
+        {
+        draw_sprite(spr_heart1 , 0 , vx + 24 + i * 48 , vy + 24)
+        }
+    for(i=0 ; i &lt; mylives ; i++)
+        {
+        draw_sprite(spr_heart1 , 1 , vx + 24 + i * 48 , vy + 24)
+        }
+    }
+
+draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_font(font0);
@@ -91,6 +125,13 @@ draw_text(view_wport[0]/2+view_xview[0],view_hport[0]/16+view_yview[0],"Score: "
 
 draw_set_font(fnt_default);
 //Draw Upgrade Bar - Might need to go in Player Object
+
+for(i=0 ; i &lt; power_ups ; i++)
+    {
+    draw_sprite(spr_power_up_bar , power_up_selected == i , vx + i * 52 + 26 , vy + vh - 48 )
+    draw_sprite(spr_power_ups , i , vx + i * 52 + 26, vy + vh - 48)
+    }
+/*
 for(i = 0; i &lt; 5; i++)
 {
     draw_set_color(c_white);

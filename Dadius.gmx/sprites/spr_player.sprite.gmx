@@ -2,9 +2,9 @@
 <sprite>
   <xorig>82</xorig>
   <yorigin>82</yorigin>
-  <colkind>1</colkind>
+  <colkind>0</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>0</sepmasks>
+  <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>113</bbox_right>
@@ -28,5 +28,6 @@
     <frame index="6">images\spr_player_6.png</frame>
     <frame index="7">images\spr_player_7.png</frame>
     <frame index="8">images\spr_player_8.png</frame>
+    <frame index="9">images\spr_player_9.png</frame>
   </frames>
 </sprite>

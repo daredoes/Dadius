@@ -11,10 +11,13 @@
     <sound>sound\snd_pew1</sound>
     <sound>sound\snd_music</sound>
     <sound>sound\snd_select</sound>
+    <sound>sound\snd_powerup</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_laser</sprite>
+    <sprite>sprites\spr_laser_beam</sprite>
     <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_shield</sprite>
     <sprite>sprites\spr_enemy2</sprite>
     <sprite>sprites\sprite17</sprite>
     <sprite>sprites\spr_enemy</sprite>
@@ -37,6 +40,12 @@
     <sprite>sprites\spr_ptero</sprite>
     <sprite>sprites\spr_fireball</sprite>
     <sprite>sprites\spr_asteroids</sprite>
+    <sprite>sprites\spr_power_ups</sprite>
+    <sprite>sprites\spr_power_up</sprite>
+    <sprite>sprites\spr_power_up_bar</sprite>
+    <sprite>sprites\spr_controls</sprite>
+    <sprite>sprites\spr_heart1</sprite>
+    <sprite>sprites\spr_heart2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>
@@ -62,6 +71,12 @@
     </scripts>
     <script>scripts\adjust.gml</script>
     <script>scripts\view_follow.gml</script>
+    <script>scripts\scr_init_blinker.gml</script>
+    <script>scripts\scr_blinker_step.gml</script>
+    <script>scripts\scr_add_power_up.gml</script>
+    <script>scripts\scr_button_list.gml</script>
+    <script>scripts\scr_joystick_button_pressed.gml</script>
+    <script>scripts\scr_shorter_view_names.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -71,8 +86,10 @@
     <object>objects\obj_game</object>
     <object>objects\obj_player1</object>
     <object>objects\obj_pterodactyl</object>
+    <object>objects\obj_suicide</object>
     <object>objects\obj_effect</object>
     <object>objects\obj_spawner</object>
+    <object>objects\obj_power_up</object>
     <object>objects\obj_shrapnel</object>
     <objects name="WEAPONS / EQUIP">
       <object>objects\obj_explosion</object>
@@ -102,17 +119,19 @@
       <object>objects\obj_U</object>
       <object>objects\obj_W</object>
     </objects>
-    <object>objects\obj_suicide</object>
     <object>objects\obj_asteroid</object>
     <object>objects\obj_lose</object>
     <object>objects\obj_fireball</object>
+    <object>objects\object34</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_init</room>
     <room>rooms\rm_pewpew_intro</room>
     <room>rooms\rm_game_intro</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_game</room>
     <room>rooms\rm_lose</room>
+    <room>rooms\rm_presentation_blackscreen</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

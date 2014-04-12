@@ -13,7 +13,6 @@
   <code>instance_create(0,0,obj_game);
 
 //Temp
-instance_create(0,0,obj_controls);
 instance_create(0,0,obj_variables);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>

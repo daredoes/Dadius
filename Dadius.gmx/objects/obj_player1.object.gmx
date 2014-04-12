@@ -38,8 +38,35 @@ fire = 0
 
 image_speed = 0
 
-player_id = global.players
-global.players++
+player_id = global.players_in
+global.players_in++
+
+mylives = 3
+maxlives = mylives
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Can lose a life?
+
 </string>
           </argument>
         </arguments>
@@ -104,32 +131,32 @@ fire = 0
 
 friction = speed / 15
 
-if(obj_controls.p1Controller = false)
+if(obj_controls.player_controller[player_id] = false)
 {
     //MOVEMENT
-    if(keyboard_check(ord(obj_controls.p1Up)))
+    if(keyboard_check(obj_controls.player_up[player_id]))
     {
         y = y-moveSpeed
         //motion_add(90,1)
     }
-    if(keyboard_check(ord((obj_controls.p1Down))))
+    if(keyboard_check((obj_controls.player_down[player_id])))
     {
         y = y+moveSpeed
         //motion_add(270,1)
     }
-    if(keyboard_check(ord((obj_controls.p1Left))))
+    if(keyboard_check((obj_controls.player_left[player_id])))
     {
         x = x-moveSpeed
         //motion_add(180,1)
     }
-    if(keyboard_check(ord((obj_controls.p1Right))))
+    if(keyboard_check((obj_controls.player_right[player_id])))
     {
         x = x+moveSpeed
         //motion_add(0,1)
     }
     
     //FIRE WEAPONS
-    if(keyboard_check(ord((obj_controls.p1Shoot))))
+    if(keyboard_check((obj_controls.player_shoot[player_id])))
     {
         fire = 1
     }
@@ -201,6 +228,11 @@ hspeed = 0
 }
 //FIRE WEAPONS IF FIRE BUTTON IS PRESSED
 
+if obj_game.power_up_selected = 2
+oneShot = 0
+else
+oneShot = 1
+
 if fire
 if cfire
     {
@@ -236,7 +268,15 @@ if cfire
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room = rm_lose
+            <string>if obj_game.power_up_selected != 3
+if alarm[1] &lt; 1
+    {
+    mylives --
+    alarm[1] = 50
+    if mylives &lt;= 0
+    instance_destroy()
+    //room = rm_lose
+    }
 </string>
           </argument>
         </arguments>
@@ -260,17 +300,28 @@ if cfire
           <argument>
             <kind>1</kind>
             <string>draw_set_alpha(1)
-draw_sprite(sprite_index,0,x,y)
+
+if alarm[1] &gt; 1
+    draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_red,1)
+else
+    draw_sprite(sprite_index,0,x,y)
 
 if fire
-{
-if oneShot
-draw_sprite_ext(spr_blast,0,x+24,y,random(1)+.5,random(.5)+.5,0,c_white,1)
-else
-draw_sprite_ext(spr_blast,0,x,y+24 * -side,random(1)+.5,random(.5)+.5,0,c_white,1)
-}
+    {
+    if oneShot
+        draw_sprite_ext(spr_blast,0,x+24,y,random(1)+.5,random(.5)+.5,0,c_white,1)
+    else
+        draw_sprite_ext(spr_blast,0,x,y+24 * -side,random(1)+.5,random(.5)+.5,0,c_white,1)
+    if obj_game.power_up_selected = 1
+        draw_sprite_stretched(spr_laser_beam,0,x,y,room_width,40)
+    }
 
 draw_sprite_ext(sprite_index,1,x,y,1,1,0,c_white, (x - xprevious) / 8)
+
+if obj_game.power_up_selected = 3
+draw_sprite_ext(spr_shield,0,x,y,1,1,0,c_white, 1)
+
+
 
 </string>
           </argument>

@@ -37,6 +37,8 @@ button_sl = 0
 button_sl2 = 0
 
 tab = 0
+
+global.players = 1
 </string>
           </argument>
         </arguments>
@@ -59,31 +61,33 @@ tab = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if a &gt; 1 ad = -abs(ad)
-if a &lt; .5 ad = abs(ad)
-
-a+=ad
+            <string>scr_blinker_step()
 
 
-if keyboard_check_pressed(ord("W"))
+if keyboard_check_pressed(ord("R"))
+{
+game_restart()
+}
+
+if keyboard_check_pressed(ord("W"))|| global.joystick_up_pressed[0] = 1
 {
 button_sl --
 audio_play_sound(snd_select,1,0)
 }
 
-if keyboard_check_pressed(ord("S")) 
+if keyboard_check_pressed(ord("S")) || global.joystick_down_pressed[0] = 1
 {
 button_sl ++
 audio_play_sound(snd_select,1,0)
 }
 
-if keyboard_check_pressed(vk_up)
+if keyboard_check_pressed(vk_up)// || global.joystick_up_pressed[0] = 1
 {
 button_sl2 --
 audio_play_sound(snd_select,1,0)
 }
 
-if keyboard_check_pressed(vk_down)
+if keyboard_check_pressed(vk_down)// || global.joystick_down_pressed[0] = 1
 {
 button_sl2 ++
 audio_play_sound(snd_select,1,0)
@@ -102,10 +106,14 @@ button_sl2 = buttons-1
 if keyboard_check_pressed(vk_escape)
 game_end()
 
-if keyboard_check_pressed(ord("F"))
+if keyboard_check_pressed(ord("F")) || scr_joystick_button_pressed(0,1)
     {
     if tab = 1
-    room_goto_next()
+        {
+        if button_sl = 1
+        global.players = 2
+        room_goto_next()
+        }
     if tab = 0
     tab = 1
     //room = rm_game
@@ -153,25 +161,27 @@ if tab = 1
     {
     draw_text(room_width/2,128,"Select Character")
     buttons = 4
-    button_name[0] = "Character 1"
-    button_name[1] = "Character 2"
-    button_name[2] = "Character 3"
-    button_name[3] = "Character 4"
+    button_name[0] = "Ship 1"
+    button_name[1] = "Ship 2"
+    button_name[2] = "Ship 3"
+    button_name[3] = "Ship 4"
     
     y1 = room_height/3
     for(i=0 ; i&lt;buttons ; i++)
         {
-        draw_sprite_ext(spr_button,0,room_width/2-286,y1 + i * 128,1,1,0,c_white,1)
+        draw_sprite_ext(spr_button,0,room_width/2-286 * (global.players == 2),y1 + i * 128,1,1,0,c_white,1)
         
         if button_sl = i
-        draw_sprite_ext(spr_button,1,room_width/2-286,y1 + i * 128,1,1,0,c_white,a)
+        draw_sprite_ext(spr_button,1,room_width/2-286 * (global.players == 2),y1 + i * 128,1,1,0,c_white,a)
+        
+        draw_sprite_ext(spr_player,0,room_width/2-286 * (global.players == 2) - 100,y1 + i * 128,1,1,0,c_white,1)
         
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)
         draw_set_font(font0)
-        draw_text(room_width/2-286,y1 + i * 128 , button_name[i])
+        draw_text(room_width/2-286 * (global.players == 2) + (button_sl == i) * 8 * a,y1 + i * 128 , button_name[i])
         }
-    
+    if global.players = 2
     for(i=0 ; i&lt;buttons ; i++)
         {
         draw_sprite_ext(spr_button,0,room_width/2+286,y1 + i * 128,1,1,0,c_white,1)
@@ -179,10 +189,12 @@ if tab = 1
         if button_sl2 = i
         draw_sprite_ext(spr_button,1,room_width/2+286,y1 + i * 128,1,1,0,c_white,a)
         
+        draw_sprite_ext(spr_player,0,room_width/2+286 * (global.players == 2) - 100,y1 + i * 128,1,1,0,c_white,1)
+        
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)
         draw_set_font(font0)
-        draw_text(room_width/2+286,y1 + i * 128 , button_name[i])
+        draw_text(room_width/2+286 + (button_sl2 == i) * 8 * a,y1 + i * 128 , button_name[i])
         }
     }
 </string>
