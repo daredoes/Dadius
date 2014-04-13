@@ -66,9 +66,15 @@ instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) 
 if random(10)&gt;9
 instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , obj_power_up)
 
-if random(10) &gt; 9
+if random(20) &gt; 19
 {
-na = instance_create(view_xview[0] + view_wview[0] + 256 , random(room_height - 128) + 64 , obj_asteroid)
+na = instance_create(view_xview[0] + view_wview[0] + 256 , random(128) , obj_asteroid)
+na.hspeed = -1
+}
+
+if random(20) &gt; 19
+{
+na = instance_create(view_xview[0] + view_wview[0] + 256 , view_hview[0]-random(128) , obj_asteroid)
 na.hspeed = -1
 }
 
