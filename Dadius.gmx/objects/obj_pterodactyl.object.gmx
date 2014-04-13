@@ -59,6 +59,7 @@ noPoints = false;
 {
     score += value;
 }
+event_inherited();
 </string>
           </argument>
         </arguments>
