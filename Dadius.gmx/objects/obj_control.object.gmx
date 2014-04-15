@@ -100,6 +100,7 @@ global.a+=.01
 if keyboard_check_pressed(vk_space)
 proceed = true
 
+/*
 dir = random(360)
 x1 = room_width/2 //+ lengthdir_x(room_width/2 + 16,dir)
 y1 = room_height/2 //+ lengthdir_y(room_width/2 + 16,dir)
@@ -107,6 +108,8 @@ ns = instance_create(x1,y1,obj_star)
 
 ns.direction = dir //point_direction(ns.x,ns.y,room_width/2,room_height/2)
 ns.speed = random(1)+2
+
+*/
 </string>
           </argument>
         </arguments>
