@@ -27,6 +27,31 @@
             <kind>1</kind>
             <string>scr_init_blinker()
 alarm[0] = 50
+
+if score &gt; global.topscore
+    {
+    if file_exists("topscore.txt")
+        {
+        file_delete("topscore.txt")
+        }
+    fid = file_text_open_write("topscore.txt")
+    file_text_write_real(fid,score)
+    file_text_close(fid)
+    global.topscore = score
+    win = 1
+    }
+else
+    {
+    if score = global.topscore
+        {
+        win = .5
+        }
+    else //(if score &lt; global.topscore)
+        {
+        win = 0
+        }
+    }
+
 </string>
           </argument>
         </arguments>
@@ -76,7 +101,22 @@ alarm[0] = 50
 
 draw_set_font(font0)
 draw_set_color(c_white)
-draw_text(room_width/2,room_height/2,"LOSE")
+
+if win = 0 //score &lt; global.topscore
+{
+draw_text(room_width/2,room_height/2,"LOSE##Score: "+string(score)+"##Top Score: "+string(global.topscore))
+}
+else
+if win = .5 //score = global.topscore
+{
+draw_text(room_width/2,room_height/2,"TIE##Score: "+string(score)+"##Congratulations! Tied with High Score!")
+}
+else
+if win = 1 //score &gt; global.topscore
+{
+draw_text(room_width/2,room_height/2,"WIN##Score: "+string(score)+"##Congratulations! New High Score!")
+}
+
 
 if alarm[0] &lt; 2
 {

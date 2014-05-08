@@ -93,6 +93,7 @@
     <object>objects\obj_power_up</object>
     <objects name="Enemies">
       <object>objects\obj_spawner</object>
+      <object>objects\obj_enemy</object>
       <object>objects\obj_suicide</object>
       <object>objects\obj_pterodactyl</object>
     </objects>

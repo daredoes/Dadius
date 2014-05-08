@@ -35,6 +35,7 @@ side = 1
 oneShot = 1
 
 fire = 0
+fire2 = 0
 
 image_speed = 0
 
@@ -213,6 +214,8 @@ x+=2 //MAKE THE PLAYER FOLLOW THE VIEW BY DEFAULT IF NO BUTTON IS PRESSED
 
 //RESET FIRING TO 0 BEFORE CHECKING CONTROLS TO SEE IF ITS PRESSED AGAIN
 fire = 0
+fire2 = 0
+
 
 if powerup_speedup
     {
@@ -255,6 +258,12 @@ if(obj_controls.player_controller[player_id] = false)
     if(keyboard_check((obj_controls.player_shoot[player_id])))
     {
         fire = 1
+    }
+    
+    //FIRE WEAPONS
+    if(keyboard_check((obj_controls.player_shoot2[player_id])))
+    {
+        fire2 = 1
     }
     
     //DEVELOPER CONTROLS
@@ -337,6 +346,35 @@ if fire
 if cfire
     {
     cfire = 0
+    if powerup_downshot
+        {
+        alarm[0] = 20
+        space = 2
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1+space
+        nb.image_index = 0
+        nb.hspeed = 24
+        nb.vspeed = 24
+        
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1+space*2
+        nb.image_index = 0
+        nb.hspeed = 24
+        nb.vspeed = 24
+        
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1
+        nb.image_index = 0
+        nb.hspeed = 24
+        nb.vspeed = 24
+        
+        }
     if powerup_shot
         {
         alarm[0] = 6
@@ -375,7 +413,14 @@ if cfire
     side *= -1
     fire = 1
     }
-
+if fire2
+    {
+    if powerup_special
+        {
+        with obj_bad
+        instance_destroy()
+        }    
+    }
 
 
     

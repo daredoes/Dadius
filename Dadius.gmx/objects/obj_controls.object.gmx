@@ -25,7 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>window_set_cursor(cr_none)
+            <string>global.topscore = 0
+if file_exists("topscore.txt")
+    {
+    fid = file_text_open_read("topscore.txt")
+    global.topscore = file_text_read_real(fid)
+    file_text_close(fid)
+    }
+
+window_set_cursor(cr_none)
 //Player 1 Controls
 player_up[0] = ord('W');
 player_down[0] = ord('S');
