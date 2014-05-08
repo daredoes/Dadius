@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_bad</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -76,7 +76,8 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if obj_game.power_up_selected = 1
+            <string>/*
+if obj_game.power_up_selected = 1
 if abs(y - obj_player1.y) &lt; 16
     {
     instance_destroy()
@@ -88,7 +89,7 @@ if abs(y - obj_player1.y) &lt; 16
     
     audio_play_sound(snd_explosion1,1,0)
     }
-    
+*/  
 if(x-obj_player1.x &lt;800)
 {
 if(y &lt; obj_player1.y &amp;&amp; !attacking)

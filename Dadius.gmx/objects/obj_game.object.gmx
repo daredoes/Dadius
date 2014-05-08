@@ -41,7 +41,7 @@ scr_add_power_up("Double" )
 scr_add_power_up("Shield" )
 scr_add_power_up("Special" )
 
-power_up_selected = 0
+power_up_selected = -1
 
 
 </string>
@@ -115,6 +115,11 @@ with obj_player1
         {
         draw_sprite(spr_heart1 , 1 , vx + 24 + i * 48 , vy + 24)
         }
+        
+    for(i=0 ; i &lt; shields ; i++)
+        {
+        draw_sprite(spr_shield_symbol , 0 , vx + 24 + i * 48 + 24 , vy + 24 + 24)
+        }
     }
 
 draw_set_color(c_white);
@@ -129,9 +134,23 @@ draw_set_font(fnt_default);
 for(i=0 ; i &lt; power_ups ; i++)
     {
     draw_sprite(spr_power_up_bar , power_up_selected == i , vx + i * 52 + 26 , vy + vh - 48 )
+    
+    if i = 0 &amp;&amp; obj_player1.powerup_speedup = 0
+    || (i = 1 &amp;&amp; obj_player1.powerup_shot = 0)
+    || (i = 2 &amp;&amp; obj_player1.powerup_shield = 0)
+    || (i = 3 &amp;&amp; obj_player1.powerup_downshot = 0)
+    || (i = 4 &amp;&amp; obj_player1.powerup_special = 0)
     draw_sprite(spr_power_ups , i , vx + i * 52 + 26, vy + vh - 48)
     }
 /*
+
+powerup_speedup = 0
+powerup_shot = 0
+powerup_shield = 0
+powerup_downshot = 0
+powerup_special = 0
+
+
 for(i = 0; i &lt; 5; i++)
 {
     draw_set_color(c_white);

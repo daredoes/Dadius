@@ -82,7 +82,9 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if obj_game.power_up_selected = 1
+            <string>/*
+if obj_game.power_up_selected = 1
+if obj_player1.fire
 if abs(y - obj_player1.y) &lt; 16
     {
     instance_destroy()
@@ -94,7 +96,7 @@ if abs(y - obj_player1.y) &lt; 16
     
     audio_play_sound(snd_explosion1,1,0)
     }
-
+*/
 if(x -obj_player1.x &lt; -800)
 {
     noPoints = true;

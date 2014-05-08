@@ -12,10 +12,13 @@
     <sound>sound\snd_music</sound>
     <sound>sound\snd_select</sound>
     <sound>sound\snd_powerup</sound>
+    <sound>sound\snd_Pew_Pew_studio</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_laser</sprite>
     <sprite>sprites\spr_laser_beam</sprite>
+    <sprite>sprites\spr_ship2</sprite>
+    <sprite>sprites\spr_ship1</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_shield</sprite>
     <sprite>sprites\spr_enemy2</sprite>
@@ -45,6 +48,7 @@
     <sprite>sprites\spr_power_up_bar</sprite>
     <sprite>sprites\spr_controls</sprite>
     <sprite>sprites\spr_heart1</sprite>
+    <sprite>sprites\spr_shield_symbol</sprite>
     <sprite>sprites\spr_heart2</sprite>
   </sprites>
   <backgrounds name="background">
@@ -84,12 +88,15 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_game</object>
+    <object>objects\obj_controls</object>
     <object>objects\obj_player1</object>
-    <object>objects\obj_pterodactyl</object>
-    <object>objects\obj_suicide</object>
-    <object>objects\obj_effect</object>
-    <object>objects\obj_spawner</object>
     <object>objects\obj_power_up</object>
+    <objects name="Enemies">
+      <object>objects\obj_spawner</object>
+      <object>objects\obj_suicide</object>
+      <object>objects\obj_pterodactyl</object>
+    </objects>
+    <object>objects\obj_effect</object>
     <object>objects\obj_shrapnel</object>
     <objects name="WEAPONS / EQUIP">
       <object>objects\obj_explosion</object>
@@ -102,7 +109,6 @@
     <object>objects\obj_main_menu</object>
     <object>objects\obj_variables</object>
     <object>objects\obj_bad</object>
-    <object>objects\obj_controls</object>
     <objects name="INTRO">
       <object>objects\obj_star</object>
       <object>objects\obj_control</object>
@@ -122,7 +128,7 @@
     <object>objects\obj_asteroid</object>
     <object>objects\obj_lose</object>
     <object>objects\obj_fireball</object>
-    <object>objects\object34</object>
+    <object>objects\obj_skip</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

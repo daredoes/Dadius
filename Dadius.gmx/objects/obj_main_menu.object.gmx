@@ -159,6 +159,11 @@ if tab = 0
 
 if tab = 1
     {
+    ss[0] = spr_ship1
+    ss[1] = spr_ship2
+    ss[2] = spr_ship1
+    ss[3] = spr_ship1
+    
     draw_text(room_width/2,128,"Select Character")
     buttons = 4
     button_name[0] = "Ship 1"
@@ -174,13 +179,14 @@ if tab = 1
         if button_sl = i
         draw_sprite_ext(spr_button,1,room_width/2-286 * (global.players == 2),y1 + i * 128,1,1,0,c_white,a)
         
-        draw_sprite_ext(spr_player,0,room_width/2-286 * (global.players == 2) - 100,y1 + i * 128,1,1,0,c_white,1)
+        draw_sprite_ext(ss[i],0,room_width/2-286 * (global.players == 2) - 100,y1 + i * 128,1,1,0,c_white,1)
         
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)
         draw_set_font(font0)
         draw_text(room_width/2-286 * (global.players == 2) + (button_sl == i) * 8 * a,y1 + i * 128 , button_name[i])
         }
+     
     if global.players = 2
     for(i=0 ; i&lt;buttons ; i++)
         {
@@ -189,7 +195,7 @@ if tab = 1
         if button_sl2 = i
         draw_sprite_ext(spr_button,1,room_width/2+286,y1 + i * 128,1,1,0,c_white,a)
         
-        draw_sprite_ext(spr_player,0,room_width/2+286 * (global.players == 2) - 100,y1 + i * 128,1,1,0,c_white,1)
+        draw_sprite_ext(ss[i],0,room_width/2+286 * (global.players == 2) - 100,y1 + i * 128,1,1,0,c_white,1)
         
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)
