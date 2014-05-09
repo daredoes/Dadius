@@ -39,7 +39,7 @@ button_sl2 = 0
 tab = 0
 
 global.players = 1
-
+if(!audio_is_playing(snd_game))
 audio_play_music(snd_main_menu, true);
 </string>
           </argument>

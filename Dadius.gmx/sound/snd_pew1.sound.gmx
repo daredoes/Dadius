@@ -2,10 +2,10 @@
 <sound>
   <kind>0</kind>
   <extension>.wav</extension>
-  <origname>Enhanced_Laser_Shoot.wav</origname>
+  <origname>D:\Documents\GitHub\Dadius\Dadius.gmx\\sound\audio\snd_pew1.wav</origname>
   <effects>0</effects>
   <volume>
-    <volume>0.4</volume>
+    <volume>0.2</volume>
   </volume>
   <pan>0</pan>
   <bitRates>

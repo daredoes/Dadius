@@ -42,7 +42,7 @@ scr_add_power_up("Shield" )
 scr_add_power_up("Special" )
 
 power_up_selected = -1
-
+if(!audio_is_playing(snd_game))
 audio_play_music(snd_game,true);
 
 
