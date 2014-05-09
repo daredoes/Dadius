@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>cfire = 1
+cfire2 = 1
+
 moveSpeed = 10;
 upgrades = 0;
 maxUpgrades = 4
@@ -54,6 +56,29 @@ powerup_special = 0
 shields = 0
 
 can_lose_shield = 1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>cfire2 = 1
 </string>
           </argument>
         </arguments>
@@ -153,7 +178,9 @@ can_lose_shield = 1
 
 if keyboard_check_pressed(ord("Y"))
     {
-    obj_game.power_up_selected = 4
+    obj_game.power_up_selected ++
+    if obj_game.power_up_selected &gt; 4
+    obj_game.power_up_selected = -1
     //powerup_speedup = !powerup_speedup
     }
 
@@ -187,14 +214,10 @@ if obj_game.power_up_selected &gt; -1
             powerup_downshot = 1
             obj_game.power_up_selected = -1
             }
-        //if powerup_special = 0
+        if powerup_special = 0
         if obj_game.power_up_selected = 4
             {
-            
-                with obj_bad
-                instance_destroy()
-                
-            //powerup_special = 1
+            powerup_special = 1
             obj_game.power_up_selected = -1
             }
         }
@@ -219,8 +242,6 @@ x+=2 //MAKE THE PLAYER FOLLOW THE VIEW BY DEFAULT IF NO BUTTON IS PRESSED
 
 //RESET FIRING TO 0 BEFORE CHECKING CONTROLS TO SEE IF ITS PRESSED AGAIN
 fire = 0
-fire2 = 0
-
 
 if powerup_speedup
     {
@@ -263,12 +284,6 @@ if(obj_controls.player_controller[player_id] = false)
     if(keyboard_check((obj_controls.player_shoot[player_id])))
     {
         fire = 1
-    }
-    
-    //FIRE WEAPONS
-    if(keyboard_check((obj_controls.player_shoot2[player_id])))
-    {
-        fire2 = 1
     }
     
     //DEVELOPER CONTROLS
@@ -347,39 +362,11 @@ else
     oneShot = 1
 
 if fire
+{
 //if obj_game.power_up_selected != 1
 if cfire
     {
     cfire = 0
-    if powerup_downshot
-        {
-        alarm[0] = 20
-        space = 2
-        nb = instance_create(x,y,obj_basic_shot)
-        nb.creator = id
-        nb.cango = 0
-        nb.alarm[0] = 1+space
-        nb.image_index = 0
-        nb.hspeed = 24
-        nb.vspeed = 24
-        
-        nb = instance_create(x,y,obj_basic_shot)
-        nb.creator = id
-        nb.cango = 0
-        nb.alarm[0] = 1+space*2
-        nb.image_index = 0
-        nb.hspeed = 24
-        nb.vspeed = 24
-        
-        nb = instance_create(x,y,obj_basic_shot)
-        nb.creator = id
-        nb.cango = 0
-        nb.alarm[0] = 1
-        nb.image_index = 0
-        nb.hspeed = 24
-        nb.vspeed = 24
-        
-        }
     if powerup_shot
         {
         alarm[0] = 6
@@ -418,6 +405,51 @@ if cfire
     side *= -1
     fire = 1
     }
+if cfire2
+    {
+    if powerup_downshot
+        {
+        cfire2 = 0
+        alarm[3] = 20
+        space = 2
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1+space
+        nb.image_index = 0
+        nb.hspeed = 24
+        nb.vspeed = 24
+        nb.image_angle = -45
+        
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1+space*2
+        nb.image_index = 0
+        nb.hspeed = 24
+        nb.vspeed = 24
+        nb.image_angle = -45
+        
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1
+        nb.image_index = 0
+        nb.hspeed = 24
+        nb.vspeed = 24
+        nb.image_angle = -45
+        }
+    }
+}
+if fire2
+    {
+    if powerup_special
+        {
+        with obj_bad
+        instance_destroy()
+        }    
+    }
+
 
     
     
@@ -492,11 +524,11 @@ if can_lose_shield
             <string>draw_set_alpha(1)
 
 if alarm[1] &gt; 1
-    draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_red,1)
+    draw_sprite_ext(global.player_sprite[player_id],0,x,y,1,1,0,c_red,1)
 else
-    draw_sprite(sprite_index,0,x,y)
+    draw_sprite(global.player_sprite[player_id],0,x,y)
 
-    /*
+/*
 if fire
     {
     if oneShot
