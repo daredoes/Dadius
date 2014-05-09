@@ -43,6 +43,8 @@ scr_add_power_up("Special" )
 
 power_up_selected = -1
 
+audio_play_music(snd_game,true);
+
 
 </string>
           </argument>

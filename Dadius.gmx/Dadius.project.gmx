@@ -17,6 +17,9 @@
     <sound>sound\snd_boss_roar</sound>
     <sound>sound\snd_pterodactyl</sound>
     <sound>sound\snd_c4</sound>
+    <sound>sound\snd_shield</sound>
+    <sound>sound\sound13</sound>
+    <sound>sound\snd_game</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_laser</sprite>
