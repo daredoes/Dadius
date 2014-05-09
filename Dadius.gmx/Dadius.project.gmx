@@ -13,6 +13,10 @@
     <sound>sound\snd_select</sound>
     <sound>sound\snd_powerup</sound>
     <sound>sound\snd_Pew_Pew_studio</sound>
+    <sound>sound\snd_main_menu</sound>
+    <sound>sound\snd_boss_roar</sound>
+    <sound>sound\snd_pterodactyl</sound>
+    <sound>sound\snd_c4</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_laser</sprite>

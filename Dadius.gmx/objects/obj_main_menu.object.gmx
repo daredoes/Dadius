@@ -39,6 +39,8 @@ button_sl2 = 0
 tab = 0
 
 global.players = 1
+
+audio_play_music(snd_main_menu, true);
 </string>
           </argument>
         </arguments>

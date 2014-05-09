@@ -139,6 +139,7 @@ if(x-obj_player1.x &lt; 950)
         if(image_index = 2)
         {
             instance_create(x-37,y-7,obj_fireball);
+            audio_play_sound(snd_pterodactyl,5,false);
         }
     }
     

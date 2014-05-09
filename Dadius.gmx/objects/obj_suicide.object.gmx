@@ -29,6 +29,7 @@
 value = 100;
 attacking = false;
 noPoints = false;
+charging = false;
 </string>
           </argument>
         </arguments>
@@ -52,7 +53,10 @@ noPoints = false;
           <argument>
             <kind>1</kind>
             <string>if(noPoints =false)
-score += value;
+{
+    score += value;
+    audio_play_sound(snd_explosion1,5,false);
+}
 event_inherited();
 </string>
           </argument>
@@ -103,7 +107,13 @@ if(y &gt; obj_player1.y &amp;&amp; !attacking)
 if(y &lt; obj_player1.y+10 &amp;&amp; y &gt; obj_player1.y -10)
 {
     attacking = true;
+    charging = true;
 }
+}
+if(charging)
+{
+    charging = false;
+    audio_play_sound(snd_c4,5,false);
 }
 if(attacking = true)
 {
