@@ -153,7 +153,8 @@ can_lose_shield = 1
 
 if keyboard_check_pressed(ord("Y"))
     {
-    powerup_speedup = !powerup_speedup
+    obj_game.power_up_selected = 4
+    //powerup_speedup = !powerup_speedup
     }
 
 // POWER UP ACTIVATION
@@ -186,10 +187,14 @@ if obj_game.power_up_selected &gt; -1
             powerup_downshot = 1
             obj_game.power_up_selected = -1
             }
-        if powerup_special = 0
+        //if powerup_special = 0
         if obj_game.power_up_selected = 4
             {
-            powerup_special = 1
+            
+                with obj_bad
+                instance_destroy()
+                
+            //powerup_special = 1
             obj_game.power_up_selected = -1
             }
         }
@@ -413,15 +418,6 @@ if cfire
     side *= -1
     fire = 1
     }
-if fire2
-    {
-    if powerup_special
-        {
-        with obj_bad
-        instance_destroy()
-        }    
-    }
-
 
     
     

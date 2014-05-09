@@ -41,6 +41,7 @@ player_left[0] = ord('A');
 player_right[0] = ord('D');
 player_upgrade[0] = ord('H');
 player_shoot[0] = ord('F');
+player_shoot2[0] = ord('G');
 player_controller[0] = false;
 
 player_up[1] = vk_up
@@ -49,6 +50,7 @@ player_left[1] = vk_left
 player_right[1] = vk_right
 player_upgrade[1] = ord(':')
 player_shoot[1] = ord('K')
+player_shoot2[1] = ord('L');
 player_controller[1] = false;
 
 //Dev Controls

@@ -80,6 +80,7 @@
     <script>scripts\scr_add_power_up.gml</script>
     <script>scripts\scr_button_list.gml</script>
     <script>scripts\scr_joystick_button_pressed.gml</script>
+    <script>scripts\scr_touch_input.gml</script>
     <script>scripts\scr_shorter_view_names.gml</script>
   </scripts>
   <fonts name="fonts">
