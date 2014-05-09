@@ -214,12 +214,14 @@ if obj_game.power_up_selected &gt; -1
             powerup_downshot = 1
             obj_game.power_up_selected = -1
             }
+        /*
         if powerup_special = 0
         if obj_game.power_up_selected = 4
             {
             powerup_special = 1
             obj_game.power_up_selected = -1
             }
+        */
         }
     }
 
@@ -242,6 +244,7 @@ x+=2 //MAKE THE PLAYER FOLLOW THE VIEW BY DEFAULT IF NO BUTTON IS PRESSED
 
 //RESET FIRING TO 0 BEFORE CHECKING CONTROLS TO SEE IF ITS PRESSED AGAIN
 fire = 0
+fire2 = 0
 
 if powerup_speedup
     {
@@ -284,6 +287,12 @@ if(obj_controls.player_controller[player_id] = false)
     if(keyboard_check((obj_controls.player_shoot[player_id])))
     {
         fire = 1
+    }
+    
+    //FIRE WEAPONS2
+    if(keyboard_check((obj_controls.player_shoot2[player_id])))
+    {
+        fire2 = 1
     }
     
     //DEVELOPER CONTROLS
@@ -443,10 +452,11 @@ if cfire2
 }
 if fire2
     {
-    if powerup_special
+    if obj_game.power_up_selected = 4
         {
         with obj_bad
         instance_destroy()
+        obj_game.power_up_selected = -1
         }    
     }
 

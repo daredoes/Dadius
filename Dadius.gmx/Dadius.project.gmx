@@ -62,6 +62,7 @@
   <backgrounds name="background">
     <background>background\back_dadius</background>
     <background>background\back_space</background>
+    <background>background\back_city</background>
     <background>background\back_dark_grad</background>
   </backgrounds>
   <paths name="paths">
