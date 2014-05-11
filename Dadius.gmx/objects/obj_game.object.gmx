@@ -32,16 +32,12 @@ if global.players = 2
 instance_create(view_wview[0]/2,view_hview[0]/2 + 128,obj_player1);
 text = "check";
 
-power_ups = 0
-power_up[0] = ""
 
-scr_add_power_up("Speed Boost" )
-scr_add_power_up("Beam" )
-scr_add_power_up("Double" )
-scr_add_power_up("Shield" )
-scr_add_power_up("Special" )
 
-power_up_selected = -1
+
+
+
+
 if(!audio_is_playing(snd_game))
 audio_play_music(snd_game,true);
 
@@ -105,6 +101,8 @@ room = rm_lose
             <kind>1</kind>
             <string>
 scr_shorter_view_names()
+
+//Two Player For Code
 for(a= 0; a &lt; instance_number(obj_player1);a++)
 {
 with instance_find(obj_player1,a)
@@ -177,61 +175,39 @@ draw_text(view_wport[0]/2+view_xview[0],view_hport[0]/16+view_yview[0],"Score: "
 
 draw_set_font(fnt_default);
 //Draw Upgrade Bar - Might need to go in Player Object
-
-for(i=0 ; i &lt; power_ups ; i++)
-    {
-    draw_sprite(spr_power_up_bar , power_up_selected == i , vx + i * 52 + 26 , vy + vh - 48 )
-    
-    if i = 0 &amp;&amp; obj_player1.powerup_speedup = 0
-    || (i = 1 &amp;&amp; obj_player1.powerup_shot = 0)
-    || (i = 2 &amp;&amp; obj_player1.powerup_shield = 0)
-    || (i = 3 &amp;&amp; obj_player1.powerup_downshot = 0)
-    || (i = 4 &amp;&amp; obj_player1.powerup_special = 0)
-    draw_sprite(spr_power_ups , i , vx + i * 52 + 26, vy + vh - 48)
-    }
-/*
-
-powerup_speedup = 0
-powerup_shot = 0
-powerup_shield = 0
-powerup_downshot = 0
-powerup_special = 0
-
-
-for(i = 0; i &lt; 5; i++)
+for(a= 0; a &lt; instance_number(obj_player1);a++)
 {
-    draw_set_color(c_white);
-    draw_rectangle(view_wport[0]/7*(1+i)+view_xview[0],
-    view_hport[0]-view_hport[0]/32*3,
-    view_wport[0]/7*(2+i)+view_xview[0],
-    view_hport[0]-view_hport[0]/32*2,0);
-    switch(i)
+    with instance_find(obj_player1, a)
     {
-        case 0:
-            text = "Speed Up";
-            break;
-        case 1:
-            text = "Beam";
-            break;
-        case 2:
-            text = "Double";
-            break;
-        case 3:
-            text = "Shield";
-            break;
-        case 4:
-            text = "Special";
-            break;
+        if(player_id = 0)
+        {
+            for(i=0 ; i &lt; power_ups ; i++)
+                {
+                draw_sprite(spr_power_up_bar , power_up_selected == i , vx + i * 52 + 26 , vy + vh - 48 )
+                
+                if i = 0 &amp;&amp; powerup_speedup = 0
+                || (i = 1 &amp;&amp; powerup_shot = 0)
+                || (i = 2 &amp;&amp; powerup_shield = 0)
+                || (i = 3 &amp;&amp; powerup_downshot = 0)
+                || (i = 4 &amp;&amp; powerup_special = 0)
+                draw_sprite(spr_power_ups , i , vx + i * 52 + 26, vy + vh - 48)
+                }
+        }
+        if(player_id = 1)
+        {
+            for(i=0 ; i &lt; power_ups ; i++)
+                {
+                draw_sprite(spr_power_up_bar , power_up_selected == i , vx + 1048-(power_ups*52)+ i * 52 , vy + vh - 48 )
+                
+                if i = 0 &amp;&amp; powerup_speedup = 0
+                || (i = 1 &amp;&amp; powerup_shot = 0)
+                || (i = 2 &amp;&amp; powerup_shield = 0)
+                || (i = 3 &amp;&amp; powerup_downshot = 0)
+                || (i = 4 &amp;&amp; powerup_special = 0)
+                draw_sprite(spr_power_ups , i , vx + 1048-(power_ups*52) + i * 52, vy + vh - 48)
+                }
+        }
     }
-    draw_set_color(c_black);
-    draw_text(view_wport[0]/7*(1+i)+(view_wport[0]/7*(2+i)-view_wport[0]/7*(1+i))/2+view_xview[0],
-    view_hport[0]-view_hport[0]/32*2.5,
-    text);
-    draw_set_color(c_gray);
-    draw_rectangle(view_wport[0]/7*(1+i)+view_xview[0]-2,
-    view_hport[0]-view_hport[0]/32*3,
-    view_wport[0]/7*(2+i)+view_xview[0],
-    view_hport[0]-view_hport[0]/32*2,1);
 }
 </string>
           </argument>

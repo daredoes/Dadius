@@ -62,6 +62,16 @@ powerup_special = 0
 shields = 0
 
 can_lose_shield = 1
+
+power_up_selected = -1
+power_ups = 0
+power_up[0] = ""
+
+scr_add_power_up("Speed Boost" )
+scr_add_power_up("Beam" )
+scr_add_power_up("Double" )
+scr_add_power_up("Shield" )
+scr_add_power_up("Special" )
 </string>
           </argument>
         </arguments>
@@ -184,41 +194,41 @@ can_lose_shield = 1
 
 if keyboard_check_pressed(ord("Y"))
     {
-    obj_game.power_up_selected ++
-    if obj_game.power_up_selected &gt; 4
-    obj_game.power_up_selected = -1
+    power_up_selected ++
+    if power_up_selected &gt; 4
+    power_up_selected = -1
     //powerup_speedup = !powerup_speedup
     }
 
 // POWER UP ACTIVATION
-if obj_game.power_up_selected &gt; -1
+if power_up_selected &gt; -1
     {
     if keyboard_check_pressed(ord("G"))
         {
         if powerup_speedup = 0
-        if obj_game.power_up_selected = 0
+        if power_up_selected = 0
             {
             powerup_speedup = 1
-            obj_game.power_up_selected = -1
+            power_up_selected = -1
             }
         if powerup_shot = 0
-        if obj_game.power_up_selected = 1
+        if power_up_selected = 1
             {
             powerup_shot = 1
-            obj_game.power_up_selected = -1
+            power_up_selected = -1
             }
         if powerup_shield = 0
-        if obj_game.power_up_selected = 2
+        if power_up_selected = 2
             {
             powerup_shield = 1
             shields = 3
-            obj_game.power_up_selected = -1
+            power_up_selected = -1
             }
         if powerup_downshot = 0
-        if obj_game.power_up_selected = 3
+        if power_up_selected = 3
             {
             powerup_downshot = 1
-            obj_game.power_up_selected = -1
+            power_up_selected = -1
             }
         /*
         if powerup_special = 0
@@ -372,7 +382,7 @@ if x &gt; view_xview[0] + view_wview[0] - sprite_width/2
 
 //FIRE WEAPONS IF FIRE BUTTON IS PRESSED
 
-if obj_game.power_up_selected = 2
+if power_up_selected = 2
     oneShot = 0
 else
     oneShot = 1
@@ -459,11 +469,11 @@ if cfire2
 }
 if fire2
     {
-    if obj_game.power_up_selected = 4
+    if power_up_selected = 4
         {
         with obj_bad
         instance_destroy()
-        obj_game.power_up_selected = -1
+        objpower_up_selected = -1
         }    
     }
 
@@ -534,6 +544,35 @@ if can_lose_shield
     with other instance_destroy()
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_power_up">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>power_up_selected++
+if power_up_selected &gt; power_ups - 1
+power_up_selected = 0
+with other
+    instance_destroy();
+
+audio_play_sound(snd_powerup , 1 , 0)
 </string>
           </argument>
         </arguments>
