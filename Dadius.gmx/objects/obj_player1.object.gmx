@@ -506,7 +506,11 @@ if !powerup_shield
             //instance_destroy()
             if continues = 0
                 {
-                room = rm_lose
+                instance_destroy();
+                if instance_number(obj_player1) = 0
+                {
+                    room = rm_lose;
+                }
                 }
             else
                 {

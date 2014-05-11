@@ -59,6 +59,8 @@
     <sprite>sprites\spr_heart1</sprite>
     <sprite>sprites\spr_shield_symbol</sprite>
     <sprite>sprites\spr_heart2</sprite>
+    <sprite>sprites\spr_stega</sprite>
+    <sprite>sprites\spr_turret</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>

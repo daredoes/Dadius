@@ -105,11 +105,13 @@ room = rm_lose
             <kind>1</kind>
             <string>
 scr_shorter_view_names()
-
-with obj_player1
+for(a= 0; a &lt; instance_number(obj_player1);a++)
+{
+with instance_find(obj_player1,a)
     {
     scr_shorter_view_names()
-    
+    if(player_id=0)
+    {
     //LIVES
     
     for(i=0 ; i &lt; maxlives ; i++)
@@ -135,8 +137,37 @@ with obj_player1
         {
         draw_sprite(spr_continue , 0 , vx + 24 + i * 48 , vy + 24 + 32)
         }
-        
     }
+    if(player_id=1)
+    {
+        //LIVES
+    
+    for(i=0 ; i &lt; maxlives ; i++)
+        {
+        draw_sprite(spr_heart1 , 0 , vx + 1000 - i * 48 , vy + 24)
+        }
+        
+    for(i=0 ; i &lt; mylives ; i++)
+        {
+        draw_sprite(spr_heart1 , 1 , vx + 1000 - i * 48 , vy + 24)
+        }
+        
+    //SHIELDS
+    
+    for(i=0 ; i &lt; shields ; i++)
+        {
+        draw_sprite(spr_shield_symbol , 0 , vx + 1000 - i * 48 + 24 , vy + 24 + 24)
+        }
+        
+    //CONTINUES
+    
+    for(i=0 ; i &lt; continues; i++)
+        {
+        draw_sprite(spr_continue , 0 , vx + 1000 - i * 48 , vy + 24 + 32)
+        }
+    }
+    }
+}    
 
 draw_set_color(c_white);
 draw_set_halign(fa_center);
