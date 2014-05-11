@@ -527,6 +527,12 @@ if !powerup_shield
                 continues--
                 mylives = 3
                 invincible = 30 * 4
+                powerup_speedup = 0
+                powerup_shot = 0
+                powerup_shield = 0
+                powerup_downshot = 0
+                powerup_special = 0
+                power_up_selected = -1;
                 }
             
             scr_explode()
