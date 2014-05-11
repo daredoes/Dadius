@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>cfire = 1
+            <string>invincible = 0
+invisible = 0
+
+cfire = 1
 cfire2 = 1
 
 moveSpeed = 10;
@@ -46,6 +49,9 @@ global.players_in++
 
 mylives = 3
 maxlives = mylives
+
+continues = 2
+
 
 powerup_speedup = 0
 powerup_shot = 0
@@ -282,7 +288,8 @@ if(obj_controls.player_controller[player_id] = false)
         x = x+moveSpeed
         //motion_add(0,1)
     }
-
+if invincible &lt; 30*2
+{
     //FIRE WEAPONS
     if(keyboard_check((obj_controls.player_shoot[player_id])))
     {
@@ -294,7 +301,7 @@ if(obj_controls.player_controller[player_id] = false)
     {
         fire2 = 1
     }
-    
+}
     //DEVELOPER CONTROLS
     if global.devControlsActive
         {
@@ -340,10 +347,10 @@ if(upgrades &gt; maxUpgrades)
 //MOVEMENT BOUNDARIES
 
 if y &lt; view_yview[0] + sprite_height/2
-{
-y = view_yview[0] + sprite_height/2
-vspeed = 0
-}
+    {
+    y = view_yview[0] + sprite_height/2
+    vspeed = 0
+    }
 
 if y &gt; view_yview[0] + view_hview[0] - sprite_height/2
     {
@@ -486,15 +493,30 @@ if fire2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if !powerup_shield
+            <string>if invincible = 0
+{
+if !powerup_shield
     {
     if alarm[1] &lt; 1
         {
         mylives --
         alarm[1] = 50
         if mylives &lt;= 0
-        //instance_destroy()
-        room = rm_lose
+            {
+            //instance_destroy()
+            if continues = 0
+                {
+                room = rm_lose
+                }
+            else
+                {
+                continues--
+                mylives = 3
+                invincible = 30 * 4
+                }
+            
+            scr_explode()
+            }
         }
     }
 else
@@ -507,8 +529,7 @@ if can_lose_shield
     alarm[2] = 20
     with other instance_destroy()
     }
-
-
+}
 </string>
           </argument>
         </arguments>
@@ -533,10 +554,30 @@ if can_lose_shield
             <kind>1</kind>
             <string>draw_set_alpha(1)
 
+if invincible &gt; 0
+    {
+    invincible--
+    }
+    
+if (invincible mod 2 != 0) || invincible &gt; 2 * 30
+    {
+    invisible = 1
+    }
+else
+    {
+    invisible = 0
+    }
+
+if (!invisible)
+{    
 if alarm[1] &gt; 1
-    draw_sprite_ext(global.player_sprite[player_id],0,x,y,1,1,0,c_red,1)
+    {
+    draw_sprite_ext(global.player_sprite[player_id],0,x,y,1,1,0,c_red,alarm[1] mod 2)
+    }
 else
     draw_sprite(global.player_sprite[player_id],0,x,y)
+}
+
 
 /*
 if fire

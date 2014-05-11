@@ -109,19 +109,33 @@ scr_shorter_view_names()
 with obj_player1
     {
     scr_shorter_view_names()
+    
+    //LIVES
+    
     for(i=0 ; i &lt; maxlives ; i++)
         {
         draw_sprite(spr_heart1 , 0 , vx + 24 + i * 48 , vy + 24)
         }
+        
     for(i=0 ; i &lt; mylives ; i++)
         {
         draw_sprite(spr_heart1 , 1 , vx + 24 + i * 48 , vy + 24)
         }
         
+    //SHIELDS
+    
     for(i=0 ; i &lt; shields ; i++)
         {
         draw_sprite(spr_shield_symbol , 0 , vx + 24 + i * 48 + 24 , vy + 24 + 24)
         }
+        
+    //CONTINUES
+    
+    for(i=0 ; i &lt; continues; i++)
+        {
+        draw_sprite(spr_continue , 0 , vx + 24 + i * 48 , vy + 24 + 32)
+        }
+        
     }
 
 draw_set_color(c_white);
