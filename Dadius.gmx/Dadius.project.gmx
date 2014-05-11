@@ -24,9 +24,11 @@
   <sprites name="sprites">
     <sprite>sprites\spr_laser</sprite>
     <sprite>sprites\spr_laser_beam</sprite>
-    <sprite>sprites\spr_ship1</sprite>
-    <sprite>sprites\spr_ship2</sprite>
-    <sprite>sprites\spr_ship3</sprite>
+    <sprite>sprites\spr_ship1_player1</sprite>
+    <sprite>sprites\spr_ship1_player2</sprite>
+    <sprite>sprites\spr_ship2_player1</sprite>
+    <sprite>sprites\spr_ship2_player2</sprite>
+    <sprite>sprites\spr_ship3_player1</sprite>
     <sprite>sprites\spr_continue</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_shield</sprite>
@@ -66,6 +68,7 @@
     <background>background\back_dadius</background>
     <background>background\back_space</background>
     <background>background\back_atmo</background>
+    <background>background\back_city2</background>
     <background>background\back_city</background>
     <background>background\back_dark_grad</background>
   </backgrounds>
