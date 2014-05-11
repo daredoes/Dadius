@@ -51,7 +51,7 @@ a = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>a-=.01
+            <string>a-=.05
 if a &lt;= 0
 instance_destroy()
 draw_set_alpha(a)

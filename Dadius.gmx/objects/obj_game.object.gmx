@@ -161,7 +161,7 @@ with instance_find(obj_player1,a)
     
     for(i=0 ; i &lt; continues; i++)
         {
-        draw_sprite(spr_continue , 0 , vx + 1000 - i * 48 , vy + 24 + 32)
+        draw_sprite(spr_continue , 0 , vx + 1000 - i * 48 + 24 , vy + 24 + 32)
         }
     }
     }
