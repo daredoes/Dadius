@@ -30,6 +30,7 @@ value = 100;
 attacking = false;
 noPoints = false;
 charging = true;
+powerUp = false;
 </string>
           </argument>
         </arguments>
@@ -55,11 +56,9 @@ charging = true;
             <string>if(noPoints =false)
 {
     score += value;
-    audio_play_sound(snd_explosion1,5,false);
 }
 event_inherited();
 
-scr_explode()
 </string>
           </argument>
         </arguments>
@@ -151,13 +150,7 @@ if(x-obj_player1.x &lt; -1024)
             <kind>1</kind>
             <string>image_speed = .3;
 
-//instance_destroy()
-
-with other 
-    instance_destroy()
-
-audio_play_sound(snd_explosion1,1,0)
-
+event_inherited();
 
 </string>
           </argument>

@@ -109,7 +109,7 @@ alarm[0] = set
             <kind>1</kind>
             <string>t+=2
 
-if t = 0 instance_create(view_xview[0]  + view_wview[0]+ 64,360,obj_pterodactyl)
+if t = 0 instance_create(view_xview[0]  + view_wview[0]+ 64,360,obj_turret)
 if t = 180 instance_create(view_xview[0]  + view_wview[0]+ 64,136,obj_pterodactyl)
 if t = 180 instance_create(view_xview[0]  + view_wview[0]+ 64,608,obj_pterodactyl)
 if t = 400 instance_create(view_xview[0]  + view_wview[0]+ 64,464,obj_pterodactyl)
@@ -119,7 +119,7 @@ if t = 630 instance_create(view_xview[0]  + view_wview[0]+ 64,152,obj_pterodacty
 if t = 630 instance_create(view_xview[0]  + view_wview[0]+ 64,544,obj_pterodactyl)
 if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,664,obj_pterodactyl)
 if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,440,obj_pterodactyl)
-if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,232,obj_pterodactyl)
+if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,232,obj_turret)
 if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,56,obj_pterodactyl)
 if t = 1110 instance_create(view_xview[0]  + view_wview[0]+ 64,128,obj_pterodactyl)
 if t = 1110 instance_create(view_xview[0]  + view_wview[0]+ 64,312,obj_pterodactyl)

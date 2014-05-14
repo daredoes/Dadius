@@ -114,6 +114,7 @@
       <object>objects\obj_enemy</object>
       <object>objects\obj_suicide</object>
       <object>objects\obj_pterodactyl</object>
+      <object>objects\obj_turret</object>
     </objects>
     <object>objects\obj_effect</object>
     <object>objects\obj_shrapnel</object>
@@ -148,7 +149,7 @@
     <object>objects\obj_lose</object>
     <object>objects\obj_fireball</object>
     <object>objects\obj_skip</object>
-    <object>objects\obj_turret</object>
+    <object>objects\obj_turret_bullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>

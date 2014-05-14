@@ -33,6 +33,7 @@ height = round(random(600));
 up = false;
 startPoint = y;
 noPoints = false;
+powerUp = false;
 </string>
           </argument>
         </arguments>
@@ -173,7 +174,7 @@ repeat(10)
 scr_create_effect(x,y,spr_shrapnel,.1,20+random(10),random(360),random(2))
 with other instance_destroy()
 
-audio_play_sound(snd_explosion1,1,0)
+
 </string>
           </argument>
         </arguments>
