@@ -63,6 +63,9 @@
     <sprite>sprites\spr_stega</sprite>
     <sprite>sprites\spr_turret</sprite>
     <sprite>sprites\spr_fireball</sprite>
+    <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\spr_boss_attack1</sprite>
+    <sprite>sprites\spr_boss_attack2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>
@@ -115,6 +118,7 @@
       <object>objects\obj_suicide</object>
       <object>objects\obj_pterodactyl</object>
       <object>objects\obj_turret</object>
+      <object>objects\obj_boss</object>
     </objects>
     <object>objects\obj_effect</object>
     <object>objects\obj_shrapnel</object>
