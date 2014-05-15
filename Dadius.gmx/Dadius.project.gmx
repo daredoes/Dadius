@@ -114,6 +114,7 @@
     <object>objects\obj_power_up</object>
     <objects name="Enemies">
       <object>objects\obj_spawner</object>
+      <object>objects\obj_bad</object>
       <object>objects\obj_enemy</object>
       <object>objects\obj_suicide</object>
       <object>objects\obj_pterodactyl</object>
@@ -132,7 +133,6 @@
     <object>objects\obj_space_particle</object>
     <object>objects\obj_main_menu</object>
     <object>objects\obj_variables</object>
-    <object>objects\obj_bad</object>
     <objects name="INTRO">
       <object>objects\obj_star</object>
       <object>objects\obj_control</object>

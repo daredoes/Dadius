@@ -52,7 +52,7 @@ t = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
+            <string>
 wave++
 
 if(random(1))
@@ -80,7 +80,7 @@ na = instance_create(view_xview[0] + view_wview[0] + 256 , view_hview[0]-random(
 na.hspeed = -1
 }
 */
-/*
+
 set = 50 - wave
 if set &lt; 10 set = 10
 
@@ -107,29 +107,119 @@ alarm[0] = set
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>t+=2
-
-if t = 0 instance_create(view_xview[0]  + view_wview[0]+ 64,360,obj_turret)
-if t = 180 instance_create(view_xview[0]  + view_wview[0]+ 64,136,obj_pterodactyl)
-if t = 180 instance_create(view_xview[0]  + view_wview[0]+ 64,608,obj_pterodactyl)
-if t = 400 instance_create(view_xview[0]  + view_wview[0]+ 64,464,obj_pterodactyl)
-if t = 400 instance_create(view_xview[0]  + view_wview[0]+ 64,240,obj_pterodactyl)
-if t = 600 instance_create(view_xview[0]  + view_wview[0]+ 64,344,obj_pterodactyl)
-if t = 630 instance_create(view_xview[0]  + view_wview[0]+ 64,152,obj_pterodactyl)
-if t = 630 instance_create(view_xview[0]  + view_wview[0]+ 64,544,obj_pterodactyl)
-if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,664,obj_pterodactyl)
-if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,440,obj_pterodactyl)
-if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,232,obj_turret)
-if t = 850 instance_create(view_xview[0]  + view_wview[0]+ 64,56,obj_pterodactyl)
-if t = 1110 instance_create(view_xview[0]  + view_wview[0]+ 64,128,obj_pterodactyl)
-if t = 1110 instance_create(view_xview[0]  + view_wview[0]+ 64,312,obj_pterodactyl)
-if t = 1110 instance_create(view_xview[0]  + view_wview[0]+ 64,544,obj_pterodactyl)
-if t = 1300 instance_create(view_xview[0]  + view_wview[0]+ 64,440,obj_pterodactyl)
-if t = 1300 instance_create(view_xview[0]  + view_wview[0]+ 64,208,obj_pterodactyl)
-if t = 1560 instance_create(view_xview[0]  + view_wview[0]+ 64,96,obj_pterodactyl)
-if t = 1560 instance_create(view_xview[0]  + view_wview[0]+ 64,248,obj_suicide)
-if t = 1560 instance_create(view_xview[0]  + view_wview[0]+ 64,408,obj_suicide)
-if t = 1560 instance_create(view_xview[0]  + view_wview[0]+ 64,576,obj_pterodactyl)
+            <string>/*
+if t = 128 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 256 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 384 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 512 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 640 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 1}
+    if t = 1152 {no = instance_create(view_xview[0] + view_wview[0]+ 64,256,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 1152 {no = instance_create(view_xview[0] + view_wview[0]+ 64,512,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 1184 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 1280 {no = instance_create(view_xview[0] + view_wview[0]+ 64,256,obj_suicide)
+    no.powerup = 0}
+    if t = 1280 {no = instance_create(view_xview[0] + view_wview[0]+ 64,512,obj_suicide)
+    no.powerup = 0}
+    if t = 1408 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_pterodactyl)
+    no.powerup = 1}
+    if t = 1792 {no = instance_create(view_xview[0] + view_wview[0]+ 64,256,obj_suicide)
+    no.powerup = 0}
+    if t = 1792 {no = instance_create(view_xview[0] + view_wview[0]+ 64,512,obj_suicide)
+    no.powerup = 0}
+    if t = 1920 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 2048 {no = instance_create(view_xview[0] + view_wview[0]+ 64,320,obj_suicide)
+    no.powerup = 0}
+    if t = 2048 {no = instance_create(view_xview[0] + view_wview[0]+ 64,448,obj_suicide)
+    no.powerup = 0}
+    if t = 2304 {no = instance_create(view_xview[0] + view_wview[0]+ 64,768,obj_turret)
+    no.powerup = 0}
+    if t = 2560 {no = instance_create(view_xview[0] + view_wview[0]+ 64,768,obj_turret)
+    no.powerup = 1}
+    if t = 2816 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 2944 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 3072 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 0}
+    if t = 3328 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 3136 {no = instance_create(view_xview[0] + view_wview[0]+ 64,320,obj_suicide)
+    no.powerup = 0}
+    if t = 3136 {no = instance_create(view_xview[0] + view_wview[0]+ 64,448,obj_suicide)
+    no.powerup = 0}
+    if t = 3200 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 1}
+    if t = 3584 {no = instance_create(view_xview[0] + view_wview[0]+ 64,128,obj_suicide)
+    no.powerup = 0}
+    if t = 3712 {no = instance_create(view_xview[0] + view_wview[0]+ 64,128,obj_suicide)
+    no.powerup = 0}
+    if t = 3840 {no = instance_create(view_xview[0] + view_wview[0]+ 64,128,obj_suicide)
+    no.powerup = 0}
+    if t = 3584 {no = instance_create(view_xview[0] + view_wview[0]+ 64,640,obj_suicide)
+    no.powerup = 0}
+    if t = 3712 {no = instance_create(view_xview[0] + view_wview[0]+ 64,640,obj_suicide)
+    no.powerup = 0}
+    if t = 3840 {no = instance_create(view_xview[0] + view_wview[0]+ 64,640,obj_suicide)
+    no.powerup = 0}
+    if t = 4096 {no = instance_create(view_xview[0] + view_wview[0]+ 64,768,obj_turret)
+    no.powerup = 0}
+    if t = 4352 {no = instance_create(view_xview[0] + view_wview[0]+ 64,768,obj_turret)
+    no.powerup = 0}
+    if t = 4608 {no = instance_create(view_xview[0] + view_wview[0]+ 64,768,obj_turret)
+    no.powerup = 1}
+    if t = 4224 {no = instance_create(view_xview[0] + view_wview[0]+ 64,640,obj_suicide)
+    no.powerup = 0}
+    if t = 3968 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_pterodactyl)
+    no.powerup = 1}
+    if t = 4224 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 4224 {no = instance_create(view_xview[0] + view_wview[0]+ 64,128,obj_suicide)
+    no.powerup = 0}
+    if t = 4480 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_suicide)
+    no.powerup = 1}
+    if t = 4608 {no = instance_create(view_xview[0] + view_wview[0]+ 64,256,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 4608 {no = instance_create(view_xview[0] + view_wview[0]+ 64,512,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,384,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,256,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,672,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,544,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,416,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,352,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,640,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,608,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,448,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,288,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,128,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,0,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,64,obj_pterodactyl)
+    no.powerup = 0}
+    if t = 0 {no = instance_create(view_xview[0] + view_wview[0]+ 64,224,obj_pterodactyl)
+    no.powerup = 0}
+    
+t+=2
 
 </string>
           </argument>

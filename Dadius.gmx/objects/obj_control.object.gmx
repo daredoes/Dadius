@@ -90,7 +90,7 @@ ns.speed = 2
             <string>if keyboard_check_pressed(vk_escape)
 game_end()
 
-if keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("F")) || scr_joystick_button_pressed(0,1)
+if keyboard_check_pressed(vk_space) || scr_joystick_button_pressed(0,1)
 room_goto_next()
 
 //if global.a &lt; 2.5 //|| proceed
