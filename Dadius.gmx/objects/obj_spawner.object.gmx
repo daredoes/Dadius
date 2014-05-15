@@ -52,7 +52,7 @@ t = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string> 
 wave++
 
 if(random(1))

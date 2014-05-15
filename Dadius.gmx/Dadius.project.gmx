@@ -66,6 +66,7 @@
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_boss_attack1</sprite>
     <sprite>sprites\spr_boss_attack2</sprite>
+    <sprite>sprites\spr_laserblast</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>
@@ -154,6 +155,8 @@
     <object>objects\obj_fireball</object>
     <object>objects\obj_skip</object>
     <object>objects\obj_turret_bullet</object>
+    <object>objects\obj_laserblast</object>
+    <object>objects\obj_fireblast</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
