@@ -67,6 +67,8 @@
     <sprite>sprites\spr_boss_attack1</sprite>
     <sprite>sprites\spr_boss_attack2</sprite>
     <sprite>sprites\spr_laserblast</sprite>
+    <sprite>sprites\spr_laser2</sprite>
+    <sprite>sprites\spr_shield2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\back_dadius</background>
@@ -75,6 +77,7 @@
     <background>background\back_city2</background>
     <background>background\back_city</background>
     <background>background\back_dark_grad</background>
+    <background>background\back_newcity</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path_D</path>

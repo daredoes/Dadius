@@ -203,7 +203,7 @@ if keyboard_check_pressed(ord("Y"))
 // POWER UP ACTIVATION
 if power_up_selected &gt; -1
     {
-    if keyboard_check_pressed(ord("G"))
+   /* if keyboard_check_pressed(ord("G") &amp;&amp; player_id=0)
         {
         if powerup_speedup = 0
         if power_up_selected = 0
@@ -230,7 +230,7 @@ if power_up_selected &gt; -1
             powerup_downshot = 1
             power_up_selected = -1
             }
-        /*
+        
         if powerup_special = 0
         if obj_game.power_up_selected = 4
             {
@@ -239,7 +239,10 @@ if power_up_selected &gt; -1
             }
         */
         }
-    }
+        
+        //Player 2 Controls for powerup
+        
+    
 
 /*    
 powerup_speedup = 0
@@ -307,9 +310,41 @@ if invincible &lt; 30*2
     }
     
     //FIRE WEAPONS2
-    if(keyboard_check((obj_controls.player_shoot2[player_id])))
+    if(keyboard_check((obj_controls.player_upgrade[player_id])))
     {
         fire2 = 1
+    }
+    //Upgrade Weapons
+    if power_up_selected &gt; -1
+    {
+    if keyboard_check_pressed((obj_controls.player_upgrade[player_id]))
+        {
+        if powerup_speedup = 0
+        if power_up_selected = 0
+            {
+            powerup_speedup = 1
+            power_up_selected = -1
+            }
+        if powerup_shot = 0
+        if power_up_selected = 1
+            {
+            powerup_shot = 1
+            power_up_selected = -1
+            }
+        if powerup_shield = 0
+        if power_up_selected = 2
+            {
+            powerup_shield = 1
+            shields = 3
+            power_up_selected = -1
+            }
+        if powerup_downshot = 0
+        if power_up_selected = 3
+            {
+            powerup_downshot = 1
+            power_up_selected = -1
+            }
+        }
     }
 }
     //DEVELOPER CONTROLS
@@ -427,6 +462,34 @@ if cfire
         nb.image_index = 0
         nb.hspeed = 32
         }
+    if(player_id =1 &amp;&amp; powerup_shot)
+        {
+        alarm[0] = 20
+        space = 2
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1+space
+        nb.image_index = 0
+        nb.hspeed = 32
+        nb.direction = 45;
+        
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1+space*2
+        nb.image_index = 0
+        nb.hspeed = 32
+        nb.direction=0;
+        
+        nb = instance_create(x,y,obj_basic_shot)
+        nb.creator = id
+        nb.cango = 0
+        nb.alarm[0] = 1
+        nb.image_index = 0
+        nb.hspeed = 32
+        nb.direction=-45;
+        }
     
     side *= -1
     fire = 1
@@ -473,7 +536,7 @@ if fire2
         {
         with obj_bad
         instance_destroy()
-        objpower_up_selected = -1
+        power_up_selected = -1
         }    
     }
 
@@ -642,7 +705,12 @@ if fire
 //draw_sprite_ext(sprite_index,1,x,y,1,1,0,c_white, (x - xprevious) / 8)
 
 if powerup_shield
-    draw_sprite_ext(spr_shield,0,x,y,1,1,0,c_white, 1)
+{
+    if(sprite_index = spr_ship2_player1 || sprite_index = spr_ship2_player2)
+    draw_sprite_ext(spr_shield,image_index,x,y,1,1,0,c_white, 1)
+    if(sprite_index = spr_ship1_player1 || sprite_index = spr_ship1_player2)
+    draw_sprite_ext(spr_shield2,0,x,y,1,1,0,c_white,1)
+}
 
 </string>
           </argument>

@@ -149,7 +149,7 @@ if(x -obj_player1.x &lt; -800)
           <argument>
             <kind>1</kind>
             <string>draw_sprite_ext(spr_stega,image_index,x,y,facing,flipped,0,c_white,1);
-draw_sprite_ext(spr_turret,0,x,y+5,1,1,turRot,c_white,1);
+draw_sprite_ext(spr_turret,0,x-4,y-10,1,1,turRot,c_white,1);
 </string>
           </argument>
         </arguments>

@@ -39,7 +39,7 @@ player_up[0] = ord('W');
 player_down[0] = ord('S');
 player_left[0] = ord('A');
 player_right[0] = ord('D');
-player_upgrade[0] = ord('H');
+player_upgrade[0] = ord('G');
 player_shoot[0] = ord('F');
 player_shoot2[0] = ord('G');
 player_controller[0] = false;
@@ -48,9 +48,9 @@ player_up[1] = vk_up
 player_down[1] = vk_down
 player_left[1] = vk_left
 player_right[1] = vk_right
-player_upgrade[1] = ord(':')
+player_upgrade[1] = ord('L')
 player_shoot[1] = ord('K')
-player_shoot2[1] = ord('L');
+player_shoot2[1] = ord('/');
 player_controller[1] = false;
 
 //Dev Controls
@@ -215,7 +215,10 @@ if global.joysticks &gt; 0
         }
     }
 
-
+if(keyboard_check_pressed(ord('1')) &amp;&amp; keyboard_check_pressed(ord('2')))
+{
+    game_end();
+}
 </string>
           </argument>
         </arguments>

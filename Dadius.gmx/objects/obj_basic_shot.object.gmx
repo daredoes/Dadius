@@ -33,6 +33,7 @@ image_speed = 0
 cango = 0
 
 audio_play_sound(snd_pew1,15,0)
+rot = 0;
 </string>
           </argument>
         </arguments>
@@ -83,6 +84,15 @@ audio_play_sound(snd_pew1,15,0)
     {
     instance_destroy()
     }
+if(creator.player_id = 0)
+{
+    sprite_index = spr_laser;
+}
+if(creator.player_id = 1)
+{
+    sprite_index = spr_laser2;
+    rot+=10;
+}
 </string>
           </argument>
         </arguments>
@@ -107,7 +117,10 @@ audio_play_sound(snd_pew1,15,0)
             <kind>1</kind>
             <string>if cango
     {
+    if(creator.player_id = 0)
     draw_sprite_ext(sprite_index,-1,x,y,1,1,image_angle,c_white,1)
+    if(creator.player_id = 1)
+    draw_sprite_ext(sprite_index,0,x,y,.5,.5,rot,c_white,1);
     }
 else
     {

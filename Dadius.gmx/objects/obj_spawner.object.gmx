@@ -28,7 +28,7 @@
             <string>wave = 0
 spawn = obj_pterodactyl;
 alarm[0] = 10
-
+rand = floor(random(2))
 t = 0
 </string>
           </argument>
@@ -54,16 +54,23 @@ t = 0
             <kind>1</kind>
             <string> 
 wave++
-
-if(random(1))
+rand = round(random(1))
+if(rand)
 {
     spawn = obj_pterodactyl;
+    instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , spawn)
 }
 else
 {
     spawn = obj_suicide;
+    instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , spawn)
 }
-instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , spawn)
+/*else if(rand = 2)
+{
+    spawn = obj_turret;
+    instance_create(view_xview[0] + view_wview[0] + 128 , room_height - 32 , spawn)
+} */
+
 
 if random(10)&gt;9
 instance_create(view_xview[0] + view_wview[0] + 128 , random(room_height - 128) + 64 , obj_power_up)

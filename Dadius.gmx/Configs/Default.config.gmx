@@ -72,14 +72,14 @@
     <option_changeresolution>false</option_changeresolution>
     <option_closeesc>true</option_closeesc>
     <option_colordepth>0</option_colordepth>
-    <option_display_name>GameMaker: Studio</option_display_name>
+    <option_display_name>Dadius</option_display_name>
     <option_displayerrors>True</option_displayerrors>
     <option_facebook_appid></option_facebook_appid>
     <option_facebook_enable>0</option_facebook_enable>
     <option_freeze>false</option_freeze>
     <option_frequency>0</option_frequency>
     <option_frontimage>nil</option_frontimage>
-    <option_fullscreen>False</option_fullscreen>
+    <option_fullscreen>True</option_fullscreen>
     <option_gameguid>{C54393CC-9AF4-4E48-83CA-341F533AA651}</option_gameguid>
     <option_gameid>908445901</option_gameid>
     <option_haptic_effects>0</option_haptic_effects>
@@ -210,11 +210,11 @@
     <option_screenkey>True</option_screenkey>
     <option_screenshotkey>true</option_screenshotkey>
     <option_shortcircuit>True</option_shortcircuit>
-    <option_showcursor>True</option_showcursor>
+    <option_showcursor>False</option_showcursor>
     <option_showprogress>1</option_showprogress>
     <option_sizeable>False</option_sizeable>
     <option_stayontop>false</option_stayontop>
-    <option_sync_vertex>0</option_sync_vertex>
+    <option_sync_vertex>1</option_sync_vertex>
     <option_textureGroup0_border>2</option_textureGroup0_border>
     <option_textureGroup0_nocropping>0</option_textureGroup0_nocropping>
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
@@ -242,7 +242,7 @@
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
     <option_version_build>0</option_version_build>
-    <option_version_company></option_version_company>
+    <option_version_company>Pew Pew Studios</option_version_company>
     <option_version_copyright></option_version_copyright>
     <option_version_description></option_version_description>
     <option_version_major>1</option_version_major>
@@ -286,7 +286,7 @@
     <option_win8_wide_logo>Configs\Default\Windows8\logos\logo310.png</option_win8_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_build_version>0</option_windows_build_version>
-    <option_windows_company_info></option_windows_company_info>
+    <option_windows_company_info>Pew Pew Studios</option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_description_info></option_windows_description_info>
     <option_windows_enable_steam>0</option_windows_enable_steam>
